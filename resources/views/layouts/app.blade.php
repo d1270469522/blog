@@ -8,20 +8,37 @@
   <title>@yelid('title', 'blog') - 个人博客</title>
 
   <!-- css -->
-  <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="layui/css/layui.css" />
-  <link rel="stylesheet" href="css/master.css" />
-  <link rel="stylesheet" href="css/gloable.css" />
-  <link rel="stylesheet" href="css/nprogress.css" />
-  <link rel="stylesheet" href="css/blog.css" />
+  <link rel="stylesheet" href="{{ URL::asset('font-awesome/css/font-awesome.min.css') }}">
+  <link rel="stylesheet" href="{{ URL::asset('layui/css/layui.css') }}" />
+  <link rel="stylesheet" href="{{ URL::asset('css/master.css') }}" />
+  <link rel="stylesheet" href="{{ URL::asset('css/gloable.css') }}" />
+  <link rel="stylesheet" href="{{ URL::asset('css/nprogress.css') }}" />
+
+  @yield('styles')
 </head>
 <body>
 
-  <div>
+  @include('layouts._header')
+
+  <div class="doc-container" id="doc-container">
+
+    @yield('content')
 
   </div>
 
-  <!-- script -->
-  <script type="text/javascript"></script>
+  @include('layouts._footer')
+
+  <!-- Scripts -->
+  <script src="{{ URL::asset('layui/layui.js') }}"></script>
+  <script src="{{ URL::asset('js/yss/gloable.js') }}"></script>
+  <script src="{{ URL::asset('js/plugins/nprogress.js') }}"></script>
+  <script>NProgress.start();</script>
+  <script>
+      window.onload = function () {
+          NProgress.done();
+      };
+  </script>
+
+  @yield('scripts')
 </body>
 </html>
