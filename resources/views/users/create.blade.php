@@ -5,6 +5,7 @@
 @section('content')
 
 <div class="wrap">
+  <img src="{{ URL::asset('images/city2.jpg') }}" class="imgStyle">
   <div class="loginForm registerForm">
     <form>
       <div class="logoHead">注册页面</div>

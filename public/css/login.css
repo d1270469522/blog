@@ -21,7 +21,7 @@ img{
   position: fixed;
   left: 50%;
   top: 50%;
-  margin: -225px 0 0 -190px;
+  margin: -190px 0 0 -225px;
   opacity: 0.75;
   border-radius: 10px;
 }
