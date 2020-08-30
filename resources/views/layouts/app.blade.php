@@ -8,8 +8,8 @@
   <title>@yield('title', 'blog') - 个人博客</title>
 
   <!-- css -->
-  <link rel="stylesheet" href="{{ URL::asset('font-awesome/css/font-awesome.min.css') }}">
   <link rel="stylesheet" href="{{ URL::asset('layui/css/layui.css') }}" />
+  <link rel="stylesheet" href="{{ URL::asset('font-awesome/css/font-awesome.min.css') }}">
   <link rel="stylesheet" href="{{ URL::asset('css/master.css') }}" />
   <link rel="stylesheet" href="{{ URL::asset('css/gloable.css') }}" />
   <link rel="stylesheet" href="{{ URL::asset('css/nprogress.css') }}" />
