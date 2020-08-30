@@ -5,7 +5,7 @@
 
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <title>@yelid('title', 'blog') - 个人博客</title>
+  <title>@yield('title', 'blog') - 个人博客</title>
 
   <!-- css -->
   <link rel="stylesheet" href="{{ URL::asset('font-awesome/css/font-awesome.min.css') }}">

@@ -8,9 +8,6 @@
         <ul>
           <li><a href="{{ route('root') }}">首页</a></li>
           <li><a href="{{ route('topics.index') }}">博客</a></li>
-          <li><a href="{{ route('root') }}">留言</a></li>
-          <li><a href="{{ route('root') }}">日记</a></li>
-          <li><a href="{{ route('root') }}">友链</a></li>
         </ul>
       </nav>
       @guest
