@@ -58,7 +58,7 @@
             <div class="layui-col-xs12 layui-col-sm4 layui-col-md4  wow fadeInUp">
               <div class="single-news">
                 <div class="news-head">
-                  <img src="{{ URL::asset('images/index.jpg') }}">
+                  <img src="{{ URL::asset('images/wu.jpg') }}">
                   <a href="{{ route('root') }}" class="link"><i class="fa fa-link"></i></a>
                 </div>
                 <div class="news-content">

@@ -535,7 +535,7 @@ img {
 
 /*底部*/
 .footer {
-  color: #FFF;
+  color: #565755;
 }
 .footer .footer-top {
   background:#232328;
@@ -564,14 +564,17 @@ img {
   padding:10px;
   background:0 0;
   border-radius:5px;
-  border:1px solid #FFF;
-  color:#FFF;
+  border:1px solid #ccc;
+  color:#fff;
   cursor:pointer;
   display:inline-block;
-  transition: all 2s;
+  opacity: 0.5;
+  transition:all .7s;
 }
 .footer .btn:hover {
   background-color: #82B440;
+  border-color:#fff;
+  opacity: 1;
 }
 /*底部 中间：相关链接*/
 .footer .social-icon li {
@@ -583,7 +586,7 @@ img {
   margin:0;
 }
 .footer .social-icon li a {
-  color:#FFF;
+  color:#565755;
 }
 .footer .social-icon li a:hover {
   color:#82B440;
@@ -621,18 +624,23 @@ img {
 }
 /*底部*/
 
-@media screen and (min-width: 768px) {
-  .page2 {width: 750px;}
-}
-@media screen and (min-width: 992px) {
-  .page2 {width: 970px;}
-}
-@media screen and (min-width: 1200px) {
-  .page2 {width: 1170px;}
-}
+/*浏览器宽度小于 768px*/
 @media screen and (max-width:768px){
   .navgation:before,.navgation_open:before,.navgation_close:before {
     width:50%;transform: none;-webkit-transform:none;
   }
   .logo{width: 50%;padding: 0;text-align: center;}
 }
+/*浏览器宽度大于 768px*/
+@media screen and (min-width: 768px) {
+  .page2 {width: 750px;}
+}
+/*浏览器宽度大于 992px*/
+@media screen and (min-width: 992px) {
+  .page2 {width: 970px;}
+}
+/*浏览器宽度大于 1200px*/
+@media screen and (min-width: 1200px) {
+  .page2 {width: 1170px;}
+}
+

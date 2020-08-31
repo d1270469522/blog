@@ -1,4 +1,4 @@
-﻿pre{white-space:pre}
+pre{white-space:pre}
 .container-fixed:after{content:".";display:block;height:0;clear:both;visibility:hidden}
 .col-content{float:left}
 .col-other{float:right}

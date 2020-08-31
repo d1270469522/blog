@@ -1,9 +1,8 @@
-<div class="header">
-</div>
+<div class="header"></div>
 <header class="gird-header">
   <div class="header-fixed">
     <div class="header-inner">
-      <a href="javasript:;" class="header-logo" id="logo">Tianjintou Liulang</a>
+      <a href="javasript:;" class="header-logo" id="logo">你若盛开，蝴蝶自来～</a>
       <nav class="nav" id="nav">
         <ul>
           <li><a href="{{ route('root') }}">首页</a></li>
@@ -11,10 +10,19 @@
         </ul>
       </nav>
       @guest
-        <a href="{{ route('login') }}" class="blog-user"><img src="https://cdn.learnku.com/uploads/images/201709/20/1/PtDKbASVcz.png?imageView2/1/w/600/h/600"></a>
+        <a href="{{ route('login') }}" class="blog-user">
+          <img src="{{ URL::asset('images/nologin.jpg') }}">
+        </a>
       @else
-        <a href="{{ route('users.show', Auth::id()) }}" class="blog-user"><img src="{{ Auth::user()->avatar }}" class="img-responsive img-circle" width="30px" height="30px"></a>
+        <a href="{{ route('users.show', Auth::id()) }}" class="blog-user">
+          <img src="{{ Auth::user()->avatar }}">
+        </a>
       @endif
+      <a class="menu">
+        <i></i>
+        <i></i>
+        <i></i>
+      </a>
     </div>
   </div>
 </header>
