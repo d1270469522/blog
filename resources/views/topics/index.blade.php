@@ -19,7 +19,7 @@
 @endsection
 
 @section('styles')
-  <link rel="stylesheet" href="{{ URL::asset('css/blog.css') }}" />
+  <link rel="stylesheet" href="{{ URL::asset('css/topics.css') }}" />
 @stop
 
 @section('scripts')
