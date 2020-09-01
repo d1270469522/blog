@@ -535,7 +535,7 @@ img {
 
 /*底部*/
 .footer {
-  color: #565755;
+  color: #BEBEBE;
 }
 .footer .footer-top {
   background:#232328;
@@ -565,15 +565,14 @@ img {
   background:0 0;
   border-radius:5px;
   border:1px solid #ccc;
-  color:#fff;
+  color:#FFF;
   cursor:pointer;
   display:inline-block;
-  opacity: 0.5;
   transition:all .7s;
 }
 .footer .btn:hover {
   background-color: #82B440;
-  border-color:#fff;
+  border-color:#BEBEBE;
   opacity: 1;
 }
 /*底部 中间：相关链接*/
@@ -586,7 +585,7 @@ img {
   margin:0;
 }
 .footer .social-icon li a {
-  color:#565755;
+  color:#BEBEBE;
 }
 .footer .social-icon li a:hover {
   color:#82B440;
