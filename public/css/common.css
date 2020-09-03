@@ -82,7 +82,7 @@ li {
   margin:10px 5px;
   position:relative;
 }
-.nav li:before{
+.nav li:before {
   width:0;
   height:2px;
   position:absolute;
@@ -93,7 +93,7 @@ li {
   transition:all .7s;
   z-index:-1;
 }
-.nav li a{
+.nav li a {
   display:block;
   line-height:32px;
   padding:4px 28px;
@@ -104,28 +104,28 @@ li {
   transition:all .5s;
 }
 /*鼠标滑过*/
-.nav .current:before{
+.nav .current:before {
   width:100%;
   left:0;
 }
-.nav .current a{
-  color:#00CD66;
+.nav .current a {
+  color:#6BC30D;
 }
 
 /*导航右侧：点击头像登录*/
-.blog-user{
+.blog-user {
   position:absolute;
   right: 0;
   line-height:60px;
 }
-.blog-user > img{
+.blog-user > img {
   border-radius:50%;
   width:40px;
   height:40px;
 }
 
 /*/手机模式：右侧的展开菜单*/
-.menu{
+.menu {
   width:50px;
   height:50px;
   display:none;
@@ -134,7 +134,7 @@ li {
   right:0;
   top:5px;
 }
-.menu i{
+.menu i {
   background:#999;
   display:inline-block;
   width:22px;
@@ -142,20 +142,20 @@ li {
   position:absolute;
   left:14px;
 }
-.menu i:nth-of-type(1){
+.menu i:nth-of-type(1) {
   top:18px;
 }
-.menu i:nth-of-type(2){
+.menu i:nth-of-type(2) {
   top:25px;
 }
-.menu i:nth-of-type(3){
+.menu i:nth-of-type(3) {
   top:32px;
 }
 
 
 
 /*底部公共样式*/
-.grid-footer{
+.grid-footer {
   background-color:#212220;
   color:#ccc;
   font-size:14px;
@@ -165,13 +165,13 @@ li {
   clear:both;
   line-height:20px;
 }
-.copyright{
+.copyright {
   padding:10px 0 10px 0;
 }
 .copyright .info{
   text-align:center;
 }
-.copyright .contact a{
+.copyright .contact a {
   width:30px;
   height:30px;
   border-radius:100%;
@@ -187,23 +187,23 @@ li {
   transition:all .7s;
 }
 /*公共底部：联系方式：QQ、微信等*/
-.copyright .contact a:hover{
+.copyright .contact a:hover {
   color:#fff;
 }
-.copyright .contact .github:hover{
+.copyright .contact .github:hover {
   background-color:#b952c5;
 }
-.copyright .contact .qq:hover{
+.copyright .contact .qq:hover {
   background-color:#d25744;
 }
-.copyright .contact .email:hover{
+.copyright .contact .email:hover {
   background-color:#668f20;
 }
-.copyright .contact .weixin:hover{
+.copyright .contact .weixin:hover {
   background-color:#06a2c9;
 }
 /*公共底部：最下方--备案信息*/
-.copyright p{
+.copyright p {
   color:#565755;
   font-size:13px;
   margin-top: 10px;
@@ -212,17 +212,31 @@ li {
 
 
 /*/中间内容*/
-.doc-container{
+.doc-container {
   position:relative;
   padding-top:60px;
   -webkit-transition:all .2s;
   transition:all .2s;
   min-height:100vh
 }
+
+
+
+
 /*博文列表，每个模块的动画*/
-.zoomIn{
+.zoomIn {
   animation:zoomIn 2s both;
 }
+/*博文列表，每个模块的动画*/
+@keyframes zoomIn {
+  0% {
+    opacity:0;
+    -webkit-transform:scale3d(0,0,0);
+    transform:scale3d(0,0,0)
+  }
+}
+
+
 
 /*浏览器宽度小于 1024px*/
 @media screen and (max-width:1024px){
@@ -258,12 +272,5 @@ li {
   }
 }
 
-/*博文列表，每个模块的动画*/
-@keyframes zoomIn {
-  0% {
-    opacity:0;
-    -webkit-transform:scale3d(0,0,0);
-    transform:scale3d(0,0,0)
-  }
-}
+
 
