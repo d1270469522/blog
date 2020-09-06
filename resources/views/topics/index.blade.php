@@ -8,7 +8,6 @@
     <div class="col-content">
         <div class="inner">
             <article class="article-list bloglist" id="LAY_bloglist" >
-              <!-- , ['topics' => $topics] -->
               @include('topics._topic_list')
             </article>
         </div>
@@ -20,6 +19,7 @@
 
 @section('styles')
   <link rel="stylesheet" href="{{ URL::asset('css/topics.css') }}" />
+  <link rel="stylesheet" href="{{ URL::asset('css/sidebar.css') }}" />
 @stop
 
 @section('scripts')
