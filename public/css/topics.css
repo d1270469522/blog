@@ -1,4 +1,10 @@
 /*博客列表的样式*/
+* {
+  /*border: 1px solid #000;*/
+}
+img {
+  object-fit: cover; /*等比缩放*/
+}
 pre {
   /*
   normal    默认。空白会被浏览器忽略。
@@ -10,6 +16,7 @@ pre {
   */
   white-space:pre; /*规定段落中的文本是否换行*/
 }
+
 /*博客页面的容器*/
 .container-fixed:after {
   content:"";
@@ -27,210 +34,176 @@ pre {
 .article-list {
   position:relative;
 }
-.article-list .article-item {
-  overflow:hidden;
-}
+/*每个小模块*/
 .article-item {
+  overflow:hidden;
   padding:20px 30px 25px 30px;
   position:relative;
-  /*overflow:hidden;
-  */margin-top:20px;
-  background-color:#fff;
+  margin-top:20px;
+  background-color:#FFF;
 }
+/*置顶小标签*/
 .article-item .fc-flag {
-  position:absolute;
   height:20px;
-  line-height:20px;
-  text-align:center;
   width:74px;
-  background-color:#ff5722;
-  color:#fff;
-  transform:rotate(-45deg);
+  line-height:20px;
+  position:absolute;
   left:-18px;
   top:9px;
+  text-align:center;
+  background-color:#FF5722;
+  color:#FFF;
+  transform:rotate(-45deg);
 }
+/*原创&标题*/
 .article-item .title {
   line-height:30px;
-  padding:5px 130px 5px 0;
-  border-bottom:1px solid #e8e9e7;
+  padding:5px 130px 10px 0;
+  border-bottom:1px solid #E8E9E7;
   font-size:18px;
-  font-weight:400;
+  font-weight: 500;
 }
+/*原创&标题：原创*/
 .article-item .title span {
   font-size:16px;
-  font-weight:400;
   display:inline-block;
   vertical-align:bottom;
+  color: green;
 }
+/*原创&标题：标题*/
 .article-item .title a {
   color:#212220;
 }
+/*模块：右上角时间*/
 .article-item .time{
   font-family:SourceCodeProRegular,Menlo,Monaco,Consolas,"Courier New",monospace,'Helvetica Neue',Arial,sans-serif;
   position:absolute;
   right:10px;
   top:10px;
-  background-color:#fff;
-  padding:0 20px 5px 20px;
-  line-height:32px;
+  background-color:#FFF;
+  padding: 0 20px;
 }
+/*模块：右上角时间：天*/
 .article-item .time .day {
   display:block;
   text-align:center;
   font-weight:700;
   font-size:40px;
-  color:#6bc30d;
+  color:#6BC30D;
   position:relative;
   top:2px;
 }
-.article-item .time .month,.article-item .time .year {
-  color:#989997
+/*模块：右上角时间：年份、月份*/
+.article-item .time .month,
+.article-item .time .year {
+  color:#989997;
 }
+/*模块：博客的内容：图片 + 简介*/
 .article-item .content{
   margin:20px 0 0 0;
   line-height:28px;
   position:relative;
-  /*overflow:hidden;
-  */min-height:200px;
+  min-height:200px;
 }
-.article-item .artiledetail img:hover {
-  box-shadow: 0 0 5px #333;
-
-}
-.article-item .content a {
-  color:#3e8bc7;
-  margin:0 2px;
-}
+/*模块：博客的内容：图片外层超链接*/
 .article-item .content .cover {
-  display:block;
   width:300px;
   height:180px;
-  border:1px solid #e8e9e7;
+  display:block;
+  color:#3E8BC7;
+  margin-right: 10px;
   overflow:hidden;
   float:left;
-  margin-right:20px;
+  border-radius: 10px;
 }
-.article-item .content .cover img {
+/*模块：博客的内容：图片*/
+.article-item .content  .cover img {
   display:block;
   width:100%!important;
   height:100%!important;
 }
+/*阅读更多：文字*/
 .article-item .read-more{
   height:40px;
   line-height:40px;
   position:relative;
+  text-align: right;
+  font-weight: 700;
+  letter-spacing: 2px;
 }
+/*阅读更多：一条线展示*/
 .article-item .read-more:before {
   content:" ";
+  background-color:#D0D0D0;
   display:inline-block;
-  height:1px;
-  top:20px;
-  left:100px;
-  right:0;
   position:absolute;
-  background-color:#d0d0d0;
+  height:1px;
+  right:100px;
+  left:0;
+  top:20px;
 }
+/*模块底部*/
 .article-item .footer {
   color:#787977;
 }
+/*模块底部：左右两个 div*/
+.article-item .footer div:first-child{
+  width: 60%;
+  float: left;
+  text-align: left;
+}
+.article-item .footer div:nth-child(2){
+  width: 30%;
+  float: right;
+  text-align: right;
+}
+/*模块底部：可跳转的超链接*/
 .article-item .footer a {
   display:inline-block;
   vertical-align:middle;
-  font-style:normal;
 }
+/*模块底部：字体符号*/
 .article-item .footer i {
   display:inline-block;
   vertical-align:middle;
-  font-style:normal;
 }
-.article-item .footer .tags-icon:before {
-  content:"\f02c";
-}
+/*模块底部：左侧标签*/
 .article-item .footer .tags .tag {
   display:inline-block;
   font-size:12px;
   padding:2px 5px;
-  background-color:#f1f2f0;
-  color:#787977;
   margin:2px;
+  background-color:#F1F2F0;
+  color:#787977;
   text-decoration:none;
   -webkit-transition:all .2s;
   transition:all .2s;
 }
-.article-item .footer .readicon {
-  margin-right:3px;
-  font-size:16px;
+/*模块底部：左侧标签：滑过*/
+.article-item .footer .tags .tag:hover {
+  color:#FFF;
+  background:#6BC30D;
+  cursor: pointer;
 }
-.article-item .footer .readicon:before {
-  content:"\f06e";
+/*模块底部：右侧*/
+.article-item .footer .read{
+  display: inline-block;
+  margin-right: 20px;
 }
-.article-item .footer .commenticon:before {
-  content:"\f086";
-}
+/*模块底部：右侧数字*/
 .article-item .footer .num {
   font-family:SourceCodeProRegular,Menlo,Monaco,Consolas,"Courier New",monospace,'Helvetica Neue',Arial,sans-serif;
   display:inline-block;
   vertical-align:middle;
   font-style:normal;
 }
-.article-item .content a:hover,.article-item .footer a:hover,.article-item .title a:hover,.article-item a:hover {
-  color:#6bc30d;
+/*模块左右 a 标签，滑过*/
+.article-item .content a:hover,
+.article-item .footer a:hover,
+.article-item .title a:hover,
+.article-item a:hover {
+  color:#6BC30D;
   text-decoration:underline;
-}
-.article-item .footer .tags .tag:hover {
-  color:#fff;
-  background:#6bc30d;
-}
-
-.article-item .content h6 {
-  margin:20px 0;
-  border-left:3px solid #6bc30d;
-  min-height:26px;
-  line-height:26px;
-  padding:5px 20px;
-  background-color:#f8f9f7;
-  font-size:16px;
-  font-weight:400;
-  color:#585957;
-  text-shadow:0 1px 0 rgba(255,255,255,.5);
-  clear:both;
-}
-.article-item .content .copyright {
-  clear:both;
-  background-color:#f8f9f7;
-  padding:15px 20px;
-  line-height:22px;
-  text-shadow:0 1px 0 rgba(255,255,255,.8);
-  font-size:12px;
-  color:#787977;
-}
-.article-item .content .copyright .f-toe {
-  overflow:hidden;
-  word-wrap:normal!important;
-  white-space:nowrap;
-  text-overflow:ellipsis;
-}
-.article-item .content .copyright p {
-  margin:0;
-}
-.article-item .content .copyright p:after {
-  content:".";
-  display:block;
-  height:0;
-  clear:both;
-  visibility:hidden;
-}
-.article-item .content a {
-  color:#3e8bc7;
-  margin:0 2px;
-}
-.article-item .content .copyright a {
-  text-decoration:none;
-}
-.article-item .content .b-relation li:before {
-  content:"◈";
-  margin-right:5px;
-  color:#787977;
 }
 
 /*大于 1025px*/
