@@ -1,7 +1,6 @@
 <div class="col-other">
   <div class="inner">
 
-
     <!-- 分类导航 -->
     <div class="other-item" id="categoryandsearch">
       <div class="search">
@@ -18,9 +17,7 @@
         <li data-index="1"><a href="{{ route('topics.index') }}">全部文章</a></li>
         <li data-index="2"><a href="{{ route('topics.index') }}">Java</a></li>
         <li data-index="3"><a href="{{ route('topics.index') }}">前端</a></li>
-        <li data-index="3"><a href="{{ route('topics.index') }}">前端</a></li>
-        <li data-index="3"><a href="{{ route('topics.index') }}">前端</a></li>
-        <li data-index="3"><a href="{{ route('topics.index') }}">前端</a></li>
+        <li data-index="4"><a href="{{ route('topics.index') }}">前端</a></li>
       </ul>
     </div>
 
