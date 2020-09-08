@@ -10,9 +10,9 @@
   <!-- css -->
   <link rel="stylesheet" href="{{ URL::asset('layui/css/layui.css') }}" />
   <link rel="stylesheet" href="{{ URL::asset('font-awesome/css/font-awesome.min.css') }}">
+  <link rel="stylesheet" href="{{ URL::asset('css/animate.min.css') }}">
   <link rel="stylesheet" href="{{ URL::asset('css/common.css') }}" />
-  <!-- <link rel="stylesheet" href="{{ URL::asset('css/gloable.css') }}" /> -->
-  <!-- <link rel="stylesheet" href="{{ URL::asset('css/nprogress.css') }}" /> -->
+  <link rel="stylesheet" href="{{ URL::asset('css/nprogress.css') }}" />
 
   @yield('styles')
 </head>
@@ -30,8 +30,8 @@
 
   <!-- Scripts -->
   <script src="{{ URL::asset('layui/layui.js') }}"></script>
-  <script src="{{ URL::asset('js/yss/gloable.js') }}"></script>
-  <script src="{{ URL::asset('js/plugins/nprogress.js') }}"></script>
+  <script src="{{ URL::asset('js/common.js') }}"></script>
+  <script src="{{ URL::asset('js/nprogress.js') }}"></script>
   <script>NProgress.start();</script>
   <script>
       window.onload = function () {

@@ -23,5 +23,5 @@
 @stop
 
 @section('scripts')
-  <script src="{{ URL::asset('js/yss/article.js') }}"></script>
+  <script src="{{ URL::asset('js/topics.js') }}"></script>
 @stop

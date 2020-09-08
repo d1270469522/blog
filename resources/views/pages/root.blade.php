@@ -4,9 +4,10 @@
   <meta charset="utf-8">
   <title>天尽头流浪博客</title>
 
-  <link href="{{ URL::asset('css/index.css') }}" rel="stylesheet" type="text/css">
-  <link href="{{ URL::asset('layui/css/layui.css') }}" rel="stylesheet" type="text/css">
-  <link href="{{ URL::asset('font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/index.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ URL::asset('layui/css/layui.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ URL::asset('font-awesome/css/font-awesome.min.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/animate.min.css') }}">
 </head>
 <body>
 
@@ -70,7 +71,7 @@
               </div>
             </div>
             <!-- 分类：第二个 -->
-            <div class="layui-col-xs12 layui-col-sm4 layui-col-md4  wow fadeInUp" data-wow-delay=".2s">
+            <div class="layui-col-xs12 layui-col-sm4 layui-col-md4  wow fadeInUp" data-wow-delay=".3s">
               <div class="single-news">
                 <div class="news-head">
                   <img src="{{ URL::asset('images/city2.jpg') }}">
@@ -85,7 +86,7 @@
               </div>
             </div>
             <!-- 分类：第三个 -->
-            <div class="layui-col-xs12 layui-col-sm4 layui-col-md4  wow fadeInUp" data-wow-delay=".4s">
+            <div class="layui-col-xs12 layui-col-sm4 layui-col-md4  wow fadeInUp" data-wow-delay=".6s">
               <div class="single-news">
                 <div class="news-head">
                   <img src="{{ URL::asset('images/city1.jpg') }}">
