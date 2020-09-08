@@ -88,7 +88,7 @@ li {
   position:absolute;
   left:50%;
   bottom:-11px;
-  background-color:#00FF00;
+  background-color:#2E8B57;
   content:"";
   transition:all .7s;
   z-index:-1;
@@ -98,7 +98,7 @@ li {
   line-height:32px;
   padding:4px 28px;
   color:#212220;
-  font-weight:400;
+  font-weight:500;
   font-size:15px;
   text-shadow:0 1px 0 rgba(255,255,255,.2);
   transition:all .5s;
@@ -109,7 +109,8 @@ li {
   left:0;
 }
 .nav .current a {
-  color:#6BC30D;
+  color:#2E8B57;
+  font-weight:500;
 }
 
 /*导航右侧：点击头像登录*/
