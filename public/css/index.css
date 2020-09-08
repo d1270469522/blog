@@ -623,6 +623,21 @@ img {
 }
 /*底部*/
 
+
+/*首页第一模块 从小到大，动画*/
+.zoomIn {
+  animation:zoomIn 2s both;
+}
+/*首页第一模块 从小到大，动画*/
+@keyframes zoomIn {
+  0% {
+    opacity:0;
+    -webkit-transform:scale3d(0,0,0);
+    transform:scale3d(0,0,0)
+  }
+}
+
+
 /*浏览器宽度小于 768px*/
 @media screen and (max-width:768px){
   .navgation:before,.navgation_open:before,.navgation_close:before {
