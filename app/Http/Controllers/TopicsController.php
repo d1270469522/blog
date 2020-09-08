@@ -10,4 +10,9 @@ class TopicsController extends Controller
     {
         return view('topics.index');
     }
+
+    public function show()
+    {
+        return view('topics.show');
+    }
 }

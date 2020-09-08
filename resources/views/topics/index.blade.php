@@ -5,14 +5,14 @@
 @section('content')
 
 <div class="container-fixed">
-    <div class="col-content">
-        <div class="inner">
-            <article class="article-list bloglist" id="LAY_bloglist" >
-              @include('topics._topic_list')
-            </article>
-        </div>
+  <div class="col-content">
+    <div class="inner">
+      <article class="article-list bloglist" id="LAY_bloglist" >
+        @include('topics._topic_list')
+      </article>
     </div>
-    @include('shard._sidebar')
+  </div>
+  @include('shard._sidebar')
 </div>
 
 @endsection
