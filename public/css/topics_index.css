@@ -146,17 +146,6 @@ pre {
 .article-item .footer {
   color:#787977;
 }
-/*模块底部：左右两个 div*/
-.article-item .footer div:first-child{
-  width: 60%;
-  float: left;
-  text-align: left;
-}
-.article-item .footer div:nth-child(2){
-  width: 30%;
-  float: right;
-  text-align: right;
-}
 /*模块底部：可跳转的超链接*/
 .article-item .footer a {
   display:inline-block;

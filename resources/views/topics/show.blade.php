@@ -8,67 +8,159 @@
   <div class="col-content">
     <div class="inner">
       <article class="article-list">
-        <input type="hidden" value="@Model.BlogTypeID" id="blogtypeid" />
+        <!-- 隐藏 博客ID -->
+        <input type="hidden" value="1" id="topic_id" />
         <section class="article-item">
-          <aside class="title" style="line-height:1.5;">
-            <h4>Java学习路线推荐</h4>
+
+          <!-- 标题 作者 阅读量 时间 -->
+          <aside>
+            <h4 class="title">你若盛开，蝴蝶自来！</h4>
             <p class="fc-grey fs-14">
-              <small>
-                作者：<a href="javascript:void(0)" target="_blank" class="fc-link">小刘</a>
-              </small>
-              <small class="ml10">围观群众：<i class="readcount">121</i></small>
-              <small class="ml10">更新于 <label>2020-07-1:11:20:21</label> </small>
+              <small>作者 <a href="javascript:void(0)" class="fc-link">天尽头流浪</a></small>
+              <small class="ml10">围观群众 <label>121</label></small>
+              <small class="ml10">更新于 <label>2020-07-1:11:20:21</label></small>
             </p>
           </aside>
+
+          <!-- 右侧创建时间 -->
           <div class="time mt10" style="padding-bottom:0;">
             <span class="day">1</span>
             <span class="month fs-18">7<small class="fs-14">月</small></span>
             <span class="year fs-18">2020</span>
           </div>
-          <div class="content artiledetail" style="border-bottom: 1px solid #e1e2e0; padding-bottom: 20px;">
-            这篇文章是为了介绍自己自学用过的Java视频资料。本套整合教程总共180+G，共450+小时。考虑到绝大部分视频至少要看两遍，而且视频总时长并不代表学习时长，所以零基础初学者总学习时间大约为：600小时视频时长 + 100小时理解 + 100小时练习，至少需要800小时。你可能觉得自己能一天学习8小时，实际上平均下来每天能学4小时都算厉害了。总会有各种原因，比如当天内容太难，公司聚会，要出差等等。如果周末你也是坚持学习，那么最理想状况下，6个半月就可以学完，达到工作后能被人带的水平。但我知道那其实基本不可能。我自己从完全零基础，到学C语言，到学Java，除去中间断开的两个月，已经学习10个月。当然，这和我边工作边学习，以及没有人帮我找资料有很大关系。很多时间花在找资料上了。如果你已经经历过JavaSE的洗礼，会明白，我这篇回答对现在迷茫的你份量有多重，avaSE阶段，建议完全零基础的朋友，直接看刘意老师的，辅助看毕老师的。当然，也可以都试看一下再决定，每个人喜好不同。放心，完全零基础的朋友，一遍肯定学不会。所以同一套视频看两遍都算少了。另外，有时一个老师的观点是片面的，要结合不同老师的讲解才可能对一个知识点有更全面深刻的理解（前提是先把一个老师的讲解吃透）。所以我是建议刘意和毕向东的都至少看两遍。
-            <div class="copyright mt20">
-              <p class="f-toe fc-black">非特殊说明，本文版权归 ZQ个人博客 所有，转载请注明出处.</p>
-              <p class="f-toe">本文标题：<a href="javascript:void(0)" class="r-title">Java学习路线推荐</a></p>
-              <p class="f-toe">本文网址：<a href="javascript:void(0)">http://www.lzqcode.com</a></p>
-            </div>
-            <div id="aplayer" style="margin:5px 0"></div>
-            <h6>延伸阅读</h6>
-            <ol class="b-relation">
 
-            </ol>
+          <!-- 正文 -->
+          <div class="content artiledetail">
+            <a style="display: inline-block; width: 300px; height: 180px; border-radius: 10px; float: left;border-bottom: padding-right: 10px; margin-right: 10px;" >
+              <img src="{{ URL::asset('images/index.jpg') }}" style="height: 100%; width: 100%">
+            </a>
+            你若盛开，蝴蝶自来！你若盛开，蝴蝶自来！
+            你若盛开，蝴蝶自来！你若盛开，蝴蝶自来！
+            你若盛开，蝴蝶自来！你若盛开，蝴蝶自来！
+            你若盛开，蝴蝶自来！你若盛开，蝴蝶自来！
+            你若盛开，蝴蝶自来！你若盛开，蝴蝶自来！
+            你若盛开，蝴蝶自来！你若盛开，蝴蝶自来！
+            你若盛开，蝴蝶自来！你若盛开，蝴蝶自来！
+            你若盛开，蝴蝶自来！你若盛开，蝴蝶自来！
+            你若盛开，蝴蝶自来！你若盛开，蝴蝶自来！
+            你若盛开，蝴蝶自来！你若盛开，蝴蝶自来！
+            你若盛开，蝴蝶自来！你若盛开，蝴蝶自来！
+            你若盛开，蝴蝶自来！你若盛开，蝴蝶自来！
+            你若盛开，蝴蝶自来！你若盛开，蝴蝶自来！
+            你若盛开，蝴蝶自来！你若盛开，蝴蝶自来！
+            你若盛开，蝴蝶自来！你若盛开，蝴蝶自来！
+            你若盛开，蝴蝶自来！你若盛开，蝴蝶自来！
+            你若盛开，蝴蝶自来！你若盛开，蝴蝶自来！
+            你若盛开，蝴蝶自来！你若盛开，蝴蝶自来！
+            你若盛开，蝴蝶自来！你若盛开，蝴蝶自来！
+            你若盛开，蝴蝶自来！你若盛开，蝴蝶自来！
+            你若盛开，蝴蝶自来！你若盛开，蝴蝶自来！
+            你若盛开，蝴蝶自来！你若盛开，蝴蝶自来！
+            你若盛开，蝴蝶自来！你若盛开，蝴蝶自来！
+            你若盛开，蝴蝶自来！你若盛开，蝴蝶自来！
+            你若盛开，蝴蝶自来！你若盛开，蝴蝶自来！
+            <hr>
+            帝王：待我君临天下，许你四海为家<br>
+            朝臣：待我了无牵挂，许你浪迹天涯<br>
+            将军：待我半身戎马，许你共话桑麻<br>
+            书生：待我功成名就，许你花前月下<br>
+            侠客：待我名满华夏，许你当歌纵马<br>
+            琴师：待我弦断音垮，许你青丝白发<br>
+            面首：待我不再有他，许你淡饭粗茶<br>
+            情郎：待我高头大马，许你嫁衣红霞<br>
+            农夫：待我荣华富贵，许你十里桃花<br>
+            僧侣：待我一身袈裟，许你相思放下<br>
+            最终<br>
+            待你君临天下，我已昨日黄花<br>
+            待你了无牵挂，我已两鬓霜华<br>
+            待你半身戎马，红颜枯骨成沙<br>
+            待你功成名就，难忆旧事芳华<br>
+            待你名满华夏，我已厌倦厮杀<br>
+            待你弦断音垮，何来求暖取答<br>
+            待你不再有他，君言何断真假<br>
+            待你高头大马，青梅为父已嫁<br>
+            待你荣华富贵，我已种豆得瓜<br>
+            待你一身袈裟，我已参透真假<br>
+            <hr>
+            帝王：待我君临天下，许你四海为家<br>
+            朝臣：待我了无牵挂，许你浪迹天涯<br>
+            将军：待我半身戎马，许你共话桑麻<br>
+            书生：待我功成名就，许你花前月下<br>
+            侠客：待我名满华夏，许你当歌纵马<br>
+            琴师：待我弦断音垮，许你青丝白发<br>
+            面首：待我不再有他，许你淡饭粗茶<br>
+            情郎：待我高头大马，许你嫁衣红霞<br>
+            农夫：待我荣华富贵，许你十里桃花<br>
+            僧侣：待我一身袈裟，许你相思放下<br>
+            最终<br>
+            待你君临天下，我已昨日黄花<br>
+            待你了无牵挂，我已两鬓霜华<br>
+            待你半身戎马，红颜枯骨成沙<br>
+            待你功成名就，难忆旧事芳华<br>
+            待你名满华夏，我已厌倦厮杀<br>
+            待你弦断音垮，何来求暖取答<br>
+            待你不再有他，君言何断真假<br>
+            待你高头大马，青梅为父已嫁<br>
+            待你荣华富贵，我已种豆得瓜<br>
+            待你一身袈裟，我已参透真假<br>
+            <hr>
+            帝王：待我君临天下，许你四海为家<br>
+            朝臣：待我了无牵挂，许你浪迹天涯<br>
+            将军：待我半身戎马，许你共话桑麻<br>
+            书生：待我功成名就，许你花前月下<br>
+            侠客：待我名满华夏，许你当歌纵马<br>
+            琴师：待我弦断音垮，许你青丝白发<br>
+            面首：待我不再有他，许你淡饭粗茶<br>
+            情郎：待我高头大马，许你嫁衣红霞<br>
+            农夫：待我荣华富贵，许你十里桃花<br>
+            僧侣：待我一身袈裟，许你相思放下<br>
+            最终<br>
+            待你君临天下，我已昨日黄花<br>
+            待你了无牵挂，我已两鬓霜华<br>
+            待你半身戎马，红颜枯骨成沙<br>
+            待你功成名就，难忆旧事芳华<br>
+            待你名满华夏，我已厌倦厮杀<br>
+            待你弦断音垮，何来求暖取答<br>
+            待你不再有他，君言何断真假<br>
+            待你高头大马，青梅为父已嫁<br>
+            待你荣华富贵，我已种豆得瓜<br>
+            待你一身袈裟，我已参透真假<br>
+            <hr>
+            帝王：待我君临天下，许你四海为家<br>
+            朝臣：待我了无牵挂，许你浪迹天涯<br>
+            将军：待我半身戎马，许你共话桑麻<br>
+            书生：待我功成名就，许你花前月下<br>
+            侠客：待我名满华夏，许你当歌纵马<br>
+            琴师：待我弦断音垮，许你青丝白发<br>
+            面首：待我不再有他，许你淡饭粗茶<br>
+            情郎：待我高头大马，许你嫁衣红霞<br>
+            农夫：待我荣华富贵，许你十里桃花<br>
+            僧侣：待我一身袈裟，许你相思放下<br>
+            最终<br>
+            待你君临天下，我已昨日黄花<br>
+            待你了无牵挂，我已两鬓霜华<br>
+            待你半身戎马，红颜枯骨成沙<br>
+            待你功成名就，难忆旧事芳华<br>
+            待你名满华夏，我已厌倦厮杀<br>
+            待你弦断音垮，何来求暖取答<br>
+            待你不再有他，君言何断真假<br>
+            待你高头大马，青梅为父已嫁<br>
+            待你荣华富贵，我已种豆得瓜<br>
+            待你一身袈裟，我已参透真假<br>
           </div>
-          <div class="bdsharebuttonbox share" data-tag="share_1">
-            <ul>
-              <li class="f-praise"><span><a class="s-praise"></a></span></li>
-              <li class="f-weinxi"><a class="s-weinxi" data-cmd="weixin"></a></li>
-              <li class="f-sina"><a class="s-sina" data-cmd="tsina"></a></li>
-              <li class="f-qq" href="#"><i class="fa fa-qq"></i></li>
-              <li class="f-qzone"><a class="s-qzone" data-cmd="qzone"></a></li>
-            </ul>
-          </div>
-          <div class="f-cb"></div>
-          <div class="mt20 f-fwn fs-24 fc-grey comment" style="border-top: 1px solid #e1e2e0; padding-top: 20px;">
-          </div>
-          <fieldset class="layui-elem-field layui-field-title">
-            <legend>发表评论</legend>
-            <div class="layui-field-box">
-              <div class="leavemessage" style="text-align:initial">
-                <form class="layui-form blog-editor" action="">
-                  <input type="hidden" name="articleid" id="articleid" value="@Model.ID">
-                  <div class="layui-form-item">
-                    <textarea name="editorContent" lay-verify="content" id="remarkEditor" placeholder="请输入内容" class="layui-textarea layui-hide"></textarea>
-                  </div>
-                  <div class="layui-form-item">
-                    <button class="layui-btn" lay-submit="formLeaveMessage" lay-filter="formLeaveMessage">提交留言</button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </fieldset>
-          <ul class="blog-comment" id="blog-comment">
 
-          </ul>
+          <div class="copyright mt20">
+            <p class="f-toe">本文标题：<a href="javascript:void(0)">你若盛开，蝴蝶自来！</a></p>
+            <p class="f-toe">本文网址：<a href="javascript:void(0)">http://www.lzqcode.com</a></p>
+            <p class="f-toe fc-black">非特殊说明，本文版权归 天尽头流浪个人博客 所有，转载请注明出处.</p>
+          </div>
+
+          <h6>延伸阅读</h6>
+          <ol class="b-relation">
+            <li>上一篇：<a href="javascript:void(0)">你好啊</a></li>
+            <li>下一篇：<a href="javascript:void(0)">你们好</a></li>
+          </ol>
+
         </section>
       </article>
     </div>
@@ -79,7 +171,8 @@
 @endsection
 
 @section('styles')
-  <link rel="stylesheet" href="{{ URL::asset('css/topics.css') }}" />
+  <link rel="stylesheet" href="{{ URL::asset('css/topics_index.css') }}" />
+  <link rel="stylesheet" href="{{ URL::asset('css/topics_show.css') }}" />
   <link rel="stylesheet" href="{{ URL::asset('css/sidebar.css') }}" />
 @stop
 

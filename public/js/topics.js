@@ -61,7 +61,8 @@ article.Init = function ($) {
         });
         $(window).scroll(function (event) {
             var winPos = $(window).scrollTop();
-            if (winPos > 750)
+            var height = parseInt($('div[class=other-item]:last').get(0).offsetHeight + $("div[class=other-item]:last").get(0).offsetTop + 1);
+            if (winPos > height)
                 $('#categoryandsearch').addClass('fixed');
             else
                 $('#categoryandsearch').removeClass('fixed');

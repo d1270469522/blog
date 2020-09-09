@@ -18,7 +18,7 @@
 @endsection
 
 @section('styles')
-  <link rel="stylesheet" href="{{ URL::asset('css/topics.css') }}" />
+  <link rel="stylesheet" href="{{ URL::asset('css/topics_index.css') }}" />
   <link rel="stylesheet" href="{{ URL::asset('css/sidebar.css') }}" />
 @stop
 

@@ -27,6 +27,109 @@ li {
   list-style:none;
 }
 
+/*博客列表 每个模块下面：标签、阅读量、回复量*/
+.f-oh{
+  overflow: hidden;
+  zoom: 1;
+  clear: both;
+}
+/*fs：fonts 字体大小*/
+.fs-14{
+  font-size:14px;
+}
+.fs-16,h6{
+  font-size:16px;
+}
+.fs-18{
+  font-size:18px;
+}
+.fs-24{
+  font-size:24px;
+}
+/*fs：fonts 字体浮动*/
+.f-fr{
+  float:right;
+}
+.f-fl{
+  float:left;
+}
+/*fs：fonts 字体颜色*/
+.fc-black{
+  color:#383937
+}
+.fc-grey{
+  color:#787977;
+}
+.fc-red{
+  color:#ff4351;
+}
+/*fs：fonts 字体粗细*/
+.f-fwb{
+  font-weight:bold;
+}
+.f-fwn{
+  font-weight:normal;
+}
+.f-vam{
+  vertical-align:middle;
+}
+/*上外边距*/
+.mt05{
+  margin-top:5px;
+}
+.mt10{
+  margin-top:10px;
+}
+.mt20{
+  margin-top:20px;
+}
+/*左外边距*/
+.ml05{
+  margin-left:5px;
+}
+.ml10{
+  margin-left:10px;
+}
+.ml20{
+  margin-left:20px;
+}
+/*右外边距*/
+.mr05{
+  margin-right:5px;
+}
+/*超链接 颜色：用于作者*/
+.fc-link{
+  color: #3e8bc7 !important;
+}
+/*未知*/
+.f-cb,.f-cb:after{
+  display: block;
+  content: " ";
+  height: 0;
+  visibility: hidden;
+  clear: both;
+}
+.img-light{
+  position:relative;
+}
+/*图片滑过样式*/
+.img-light:after {
+  content: "";
+  height: 100%;
+  width: 100px;
+  -webkit-transform: skewX(-25deg) translateZ(0);
+  transform: skewX(-25deg) translateZ(0);
+  background-image: linear-gradient(90deg,hsla(0,0%,100%,0),hsla(0,0%,100%,.3) 50%,hsla(0,0%,100%,0));
+  position: absolute;
+  left: -160%;
+  top: 0;
+  z-index: 2;
+}
+.img-light:hover:after {
+  transition: left 1s ease-in-out;
+  left: 160%;
+}
+
 
 /*头部导航*/
 

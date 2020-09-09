@@ -1,0 +1,89 @@
+* {
+  /*border: 1px solid #000;*/
+}
+.article-item a{
+  color:#3e8bc7;
+  margin:0 2px
+}
+/*标题下面一行 上面的距离*/
+.article-item .fc-grey {
+  padding-top: 10px;
+}
+/*正文*/
+.article-item .artiledetail {
+  border-bottom: 1px solid #e1e2e0;
+  padding-bottom: 20px;
+}
+/*文章详情 图片滑过效果*/
+.article-item .artiledetail img:hover{
+  box-shadow: 0 0 5px #333;
+}
+/*非特殊说明，本文版权归*/
+.article-item .copyright{
+  clear:both;
+  background-color:#f8f9f7;
+  padding:15px 20px;
+  line-height:22px;
+  text-shadow:0 1px 0 rgba(255,255,255,.8);
+  font-size:12px;
+  color:#787977;
+  border: 1px dashed #ccc;
+}
+.article-item .copyright .f-toe{
+  overflow:hidden;
+  word-wrap:normal!important;
+  white-space:nowrap;
+  text-overflow:ellipsis
+}
+.article-item .copyright p{
+  margin:0
+}
+.article-item .copyright p:after{
+  content:".";
+  display:block;
+  height:0;
+  clear:both;
+  visibility:hidden;
+}
+.article-item .copyright a{
+  text-decoration:none;
+}
+/*延伸阅读*/
+.article-item h6{
+  margin:20px 0;
+  border-left:3px solid #6bc30d;
+  min-height:26px;
+  line-height:26px;
+  padding:5px 20px;
+  background-color:#f8f9f7;
+  font-size:16px;
+  font-weight:400;
+  color:#585957;
+  text-shadow:0 1px 0 rgba(255,255,255,.5);
+  clear:both;
+}
+.article-item .b-relation li {
+  display: block;
+  height: 30px;
+}
+.article-item .b-relation li:before{
+  content:"◈";
+  margin-right:5px;
+  color:#787977;
+}
+
+/*评论列表*/
+.blog-comment{position:relative;margin-bottom:10px}
+.blog-comment img{width:22px;height:22px}
+.blog-comment li:first-child{border-top:1px dotted #bbb}
+.blog-comment li{border-bottom:1px dotted #bbb;padding:15px 0 10px 0}
+.blog-comment .comment-content,.blog-comment .info,.blog-comment .replycontainer{margin-left:53px}
+.blog-comment .info-footer{font-size:13px}
+.blog-comment .info,.blog-comment .replycontainer{padding-top:5px}
+.blog-comment .replycontainer .layui-form-item{margin-bottom:5px}
+.blog-comment .info {overflow-x:hidden}
+.blog-comment .info span{padding-right:5px}
+.blog-comment .info .username{color:#01AAED}
+.blog-comment .info .btn-reply{color:#009688}
+.blog-comment .comment-content{padding:2px 0 5px 0;min-height:30px;font-size:13px;word-break: break-all}
+.blog-comment hr{margin-left:53px}
