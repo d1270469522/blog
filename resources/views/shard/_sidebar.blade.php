@@ -30,37 +30,9 @@
         <a href="{{ route('topics.index') }}">分类三</a>
       <div class="f-cb"></div>
     </div>
+    <div class="blog-mask animated layui-hide"></div>
 
     <!--热门文章-->
-    <div class="blog-mask animated layui-hide"></div>
-    <div class="other-item">
-      <h5 class="other-item-title">热门文章</h5>
-      <div class="inner">
-        <ul class="hot-list-article">
-          <li> <a href="{{ route('topics.index') }}">热门一</a></li>
-          <li> <a href="{{ route('topics.index') }}">热门二</a></li>
-          <li> <a href="{{ route('topics.index') }}">热门三</a></li>
-          <li> <a href="{{ route('topics.index') }}">热门四</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <!--热门文章-->
-    <div class="blog-mask animated layui-hide"></div>
-    <div class="other-item">
-      <h5 class="other-item-title">热门文章</h5>
-      <div class="inner">
-        <ul class="hot-list-article">
-          <li> <a href="{{ route('topics.index') }}">热门一</a></li>
-          <li> <a href="{{ route('topics.index') }}">热门二</a></li>
-          <li> <a href="{{ route('topics.index') }}">热门三</a></li>
-          <li> <a href="{{ route('topics.index') }}">热门四</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <!--热门文章-->
-    <div class="blog-mask animated layui-hide"></div>
     <div class="other-item">
       <h5 class="other-item-title">热门文章</h5>
       <div class="inner">
