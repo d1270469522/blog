@@ -15,4 +15,9 @@ class TopicsController extends Controller
     {
         return view('topics.show');
     }
+
+    public function create()
+    {
+        return view('topics.create');
+    }
 }
