@@ -1,0 +1,74 @@
+.layui-container  div {
+  /*border: 1px solid #000;*/
+}
+/*个人中心最外层*/
+.layui-container {
+  /*height: 100vh;*/
+  background-color: #fff;
+  margin-top: 200px;
+  border-radius: 20px;
+  background-color: rgba(255,255,255,1);
+  padding: 0 20px 50px;
+}
+/*每一层*/
+.layui-row {
+  margin-top: 30px;
+}
+/*第一模块*/
+.user-section1 {
+  height: 150px;
+  padding: 40px;
+}
+/*第一模块 左右两侧文章数量等*/
+.tags {
+  text-align: center;
+  width: 35px;
+}
+/*用户头像*/
+.user-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  margin-left: -100px;
+}
+/*用户昵称*/
+.user-name {
+  width: 200px;
+  display: block;
+  /*border: 1px solid #ccc;*/
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -100px;
+  font-weight: 500;
+}
+/*用户座右铭*/
+.user-motto {
+  text-align: center;
+}
+.user-motto p {
+  margin-bottom: 10px;
+}
+/*个人信息*/
+.user-desc {
+  margin: 30px 30px 0;
+}
+.user-desc div{
+  height: 30px;
+  line-height: 30px;
+  background-color:#f8f9f7;
+  /*border-left:3px solid #6bc30d;*/
+  margin: 10px 44px;
+  padding-left: 20px;
+}
+.statistics {
+  margin-top: 60px;
+  /*width:850px;*/
+  height:450px;
+  background-color: rgba(0,0,0,1);
+}

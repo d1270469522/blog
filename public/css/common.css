@@ -97,6 +97,12 @@ li {
 .mr05{
   margin-right:5px;
 }
+.mr10{
+  margin-right:10px;
+}
+.mr20{
+  margin-right:20px;
+}
 /*超链接 颜色：用于作者*/
 .fc-link{
   color: #3e8bc7 !important;
@@ -139,7 +145,7 @@ li {
   height:100%;
   background-color:#000;
   position:fixed!important;
-  background-image:url("../images/city2.jpg");
+  background-image:url("../images/index.jpg");
   background-size:100% 100%;
 }
 /*头部导航：logo 菜单 头像*/

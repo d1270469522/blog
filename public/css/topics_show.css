@@ -71,19 +71,3 @@
   margin-right:5px;
   color:#787977;
 }
-
-/*评论列表*/
-.blog-comment{position:relative;margin-bottom:10px}
-.blog-comment img{width:22px;height:22px}
-.blog-comment li:first-child{border-top:1px dotted #bbb}
-.blog-comment li{border-bottom:1px dotted #bbb;padding:15px 0 10px 0}
-.blog-comment .comment-content,.blog-comment .info,.blog-comment .replycontainer{margin-left:53px}
-.blog-comment .info-footer{font-size:13px}
-.blog-comment .info,.blog-comment .replycontainer{padding-top:5px}
-.blog-comment .replycontainer .layui-form-item{margin-bottom:5px}
-.blog-comment .info {overflow-x:hidden}
-.blog-comment .info span{padding-right:5px}
-.blog-comment .info .username{color:#01AAED}
-.blog-comment .info .btn-reply{color:#009688}
-.blog-comment .comment-content{padding:2px 0 5px 0;min-height:30px;font-size:13px;word-break: break-all}
-.blog-comment hr{margin-left:53px}
