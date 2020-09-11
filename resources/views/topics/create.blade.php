@@ -1,80 +1,113 @@
 @extends('layouts.app')
 
-@section('title', '话题详情')
+@section('title', '博客创建')
 
 @section('content')
 
-<div class="container-fixed">
-  <div class="col-content">
-    <div class="inner">
-      <article class="article-list">
-        <!-- 隐藏 博客ID -->
-        <input type="hidden" value="1" id="topic_id" />
-        <section class="article-item">
+<div class="layui-container">
 
-          <!-- 标题 作者 阅读量 时间 -->
-          <aside>
-            <h4 class="title">你若盛开，蝴蝶自来！</h4>
-            <p class="fc-grey fs-14">
-              <small>作者 <a href="javascript:void(0)" class="fc-link">天尽头流浪</a></small>
-              <small class="ml10">围观群众 <label>121</label></small>
-              <small class="ml10">更新于 <label>2020-07-1:11:20:21</label></small>
-            </p>
-          </aside>
+  <fieldset class="layui-elem-field layui-field-title">
+    <legend>博客创建</legend>
+  </fieldset>
 
-          <!-- 右侧创建时间 -->
-          <div class="time mt10" style="padding-bottom:0;">
-            <span class="day">1</span>
-            <span class="month fs-18">7<small class="fs-14">月</small></span>
-            <span class="year fs-18">2020</span>
-          </div>
+  <form class="layui-form" action="">
 
-          <!-- 正文 -->
-          <div class="content artiledetail">
-            <a style="display: inline-block; width: 300px; height: 180px; border-radius: 10px; float: right;border-bottom: padding-right: 10px; margin-right: 10px;" >
-              <img src="{{ URL::asset('images/index.jpg') }}" style="height: 100%; width: 100%">
-            </a>
-
-            帝王：待我君临天下，许你四海为家 ｜ 待你君临天下，我已昨日黄花<br>
-            朝臣：待我了无牵挂，许你浪迹天涯 ｜ 待你了无牵挂，我已两鬓霜华<br>
-            将军：待我半身戎马，许你共话桑麻 ｜ 待你半身戎马，红颜枯骨成沙<br>
-            书生：待我功成名就，许你花前月下 ｜ 待你功成名就，难忆旧事芳华<br>
-            侠客：待我名满华夏，许你当歌纵马 ｜ 待你名满华夏，我已厌倦厮杀<br>
-            琴师：待我弦断音垮，许你青丝白发 ｜ 待你弦断音垮，何来求暖取答<br>
-            面首：待我不再有他，许你淡饭粗茶 ｜ 待你不再有他，君言何断真假<br>
-            情郎：待我高头大马，许你嫁衣红霞 ｜ 待你高头大马，青梅为父已嫁<br>
-            农夫：待我荣华富贵，许你十里桃花 ｜ 待你荣华富贵，我已种豆得瓜<br>
-            僧侣：待我一身袈裟，许你相思放下 ｜ 待你一身袈裟，我已参透真假<br>
-
-          </div>
-
-          <div class="copyright mt20">
-            <p class="f-toe">本文标题：<a href="javascript:void(0)">你若盛开，蝴蝶自来！</a></p>
-            <p class="f-toe">本文网址：<a href="javascript:void(0)">http://www.lzqcode.com</a></p>
-            <p class="f-toe fc-black">非特殊说明，本文版权归 天尽头流浪个人博客 所有，转载请注明出处.</p>
-          </div>
-
-          <h6>延伸阅读</h6>
-          <ol class="b-relation">
-            <li>上一篇：<a href="javascript:void(0)">你好啊</a></li>
-            <li>下一篇：<a href="javascript:void(0)">你们好</a></li>
-          </ol>
-
-        </section>
-      </article>
+    <div class="layui-form-item">
+      <label class="layui-form-label">标题</label>
+      <div class="layui-input-block">
+        <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+      </div>
     </div>
-  </div>
-  @include('shard._sidebar')
+
+    <div class="layui-form-item">
+      <div class="layui-inline">
+        <label class="layui-form-label">分类</label>
+        <div class="layui-input-inline">
+          <select name="modules" lay-verify="required" lay-search="">
+            <option value="">直接选择或搜索选择</option>
+            <option value="1">layer</option>
+            <option value="2">form</option>
+            <option value="3">layim</option>
+            <option value="4">element</option>
+            <option value="5">laytpl</option>
+            <option value="6">upload</option>
+            <option value="7">laydate</option>
+            <option value="8">laypage</option>
+            <option value="9">flow</option>
+            <option value="10">util</option>
+            <option value="11">code</option>
+            <option value="12">tree</option>
+            <option value="13">layedit</option>
+            <option value="14">nav</option>
+            <option value="15">tab</option>
+            <option value="16">table</option>
+            <option value="17">select</option>
+            <option value="18">checkbox</option>
+            <option value="19">switch</option>
+            <option value="20">radio</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="layui-form-item">
+      <label class="layui-form-label">标签</label>
+      <div class="layui-input-block">
+        <input type="checkbox" name="like[write]" title="写作">
+        <input type="checkbox" name="like[read]" title="阅读" checked="">
+        <input type="checkbox" name="like[game]" title="游戏">
+      </div>
+    </div>
+
+    <div class="layui-form-item">
+      <label class="layui-form-label">是否置顶</label>
+      <div class="layui-input-block">
+        <input type="checkbox" name="close" lay-skin="switch" lay-text="ON|OFF">
+      </div>
+    </div>
+
+    <div class="layui-form-item layui-form-text">
+      <label class="layui-form-label">简介</label>
+      <div class="layui-input-block">
+        <textarea placeholder="请输入内容" class="layui-textarea"></textarea>
+      </div>
+    </div>
+
+    <div class="layui-form-item layui-form-text">
+      <label class="layui-form-label">正文</label>
+      <div class="layui-input-block">
+        <div id="editor">
+
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="layui-form-item">
+      <div class="layui-input-block">
+        <button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+      </div>
+    </div>
+  </form>
 </div>
 
 @endsection
 
 @section('styles')
-  <link rel="stylesheet" href="{{ URL::asset('css/topics_index.css') }}" />
-  <link rel="stylesheet" href="{{ URL::asset('css/topics_show.css') }}" />
-  <link rel="stylesheet" href="{{ URL::asset('css/sidebar.css') }}" />
+  <link rel="stylesheet" href="{{ URL::asset('css/topics_create.css') }}" />
 @stop
 
 @section('scripts')
-  <script src="{{ URL::asset('js/topics.js') }}"></script>
+  <script src="{{ URL::asset('js/topics_create.js') }}"></script>
+  <!-- 注意， 只需要引用 JS，无需引用任何 CSS ！！！-->
+  <script type="text/javascript" src="{{ URL::asset('js/wangEditor.min.js') }}"></script>
+
+  <script type="text/javascript">
+    var E = window.wangEditor
+    var editor = new E('#editor')
+
+    editor.create()
+  </script>
 @stop

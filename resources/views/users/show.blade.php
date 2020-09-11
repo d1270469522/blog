@@ -44,7 +44,7 @@
       公司：公司
     </div>
     <div class="layui-col-xs3 layui-col-sm3 layui-col-md3">
-      职位：PHP
+      职位：程序猿
     </div>
     <div class="layui-col-xs3 layui-col-sm3 layui-col-md3">
       邮箱：123@qq.com

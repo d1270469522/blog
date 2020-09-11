@@ -52,6 +52,14 @@ article.Init = function ($) {
   }
   // 下拉以后，显示分类搜索
   function blogtype() {
+    $('#category li').hover(function () {
+      $(this).addClass('current');
+      var num = $(this).attr('data-index');
+      $('.slider').css({ 'top': ((parseInt(num) - 1) * 40) + 'px' });
+    }, function () {
+      $(this).removeClass('current');
+      $('.slider').css({ 'top': slider });
+    });
     $(window).scroll(function (event) {
       var winPos = $(window).scrollTop();
       var height = parseInt($('div[class=other-item]:last').get(0).offsetHeight + $("div[class=other-item]:last").get(0).offsetTop + 1);

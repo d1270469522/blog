@@ -4,11 +4,10 @@
 /*个人中心最外层*/
 .layui-container {
   /*height: 100vh;*/
-  background-color: #fff;
   margin-top: 200px;
   border-radius: 20px;
-  background-color: rgba(255,255,255,1);
   padding: 0 20px 50px;
+  background-image: linear-gradient(#ccc, #CDBE70);
 }
 /*每一层*/
 .layui-row {
@@ -61,14 +60,15 @@
 .user-desc div{
   height: 30px;
   line-height: 30px;
-  background-color:#f8f9f7;
-  /*border-left:3px solid #6bc30d;*/
   margin: 10px 44px;
   padding-left: 20px;
+  background-image: linear-gradient(#ccc, #A0A0A0);
+  border-radius: 5px;
+  background-color:#f8f9f7;
 }
+/*数据统计*/
 .statistics {
   margin-top: 60px;
-  /*width:850px;*/
   height:450px;
   background-color: rgba(0,0,0,1);
 }
