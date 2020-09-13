@@ -76,13 +76,9 @@
     <div class="layui-form-item layui-form-text">
       <label class="layui-form-label">正文</label>
       <div class="layui-input-block">
-        <div id="editor">
-
-        </div>
+        <textarea id="editor"></textarea>
       </div>
     </div>
-
-
 
     <div class="layui-form-item">
       <div class="layui-input-block">
@@ -91,23 +87,48 @@
       </div>
     </div>
   </form>
+
+  <br>
+  <hr>
+  <br>
+
+  <article class="markdown-body" id="preview">
+    <h2>你好啊</h2>
+    <pre>
+      <code>
+CREATE TABLE "topic" (
+    "id" serial NOT NULL PRIMARY KEY,
+    "forum_id" integer NOT NULL,
+    "subject" varchar(255) NOT NULL
+);
+ALTER TABLE "topic"
+ADD CONSTRAINT forum_id FOREIGN KEY ("forum_id")
+REFERENCES "forum" ("id");
+
+-- Initials
+insert into "topic" ("forum_id", "subject")
+values (2, 'D''artagnian');</code>
+    </pre>
+    <blockquote>
+    <p>你好<br>你好</p>
+    </blockquote>
+  </article>
 </div>
 
 @endsection
 
 @section('styles')
+  <link rel="stylesheet" href="{{ URL::asset('css/simplemde.min.css') }}" />
+  <link rel="stylesheet" href="{{ URL::asset('css/github-markdown.css') }}" />
+  <link rel="stylesheet" href="{{ URL::asset('css/monokai-sublime.css') }}" />
   <link rel="stylesheet" href="{{ URL::asset('css/topics_create.css') }}" />
 @stop
 
 @section('scripts')
+  <script src="{{ URL::asset('js/simplemde.min.js') }}"></script>
+  <script src="{{ URL::asset('js/highlight.pack.js') }}"></script>
   <script src="{{ URL::asset('js/topics_create.js') }}"></script>
-  <!-- 注意， 只需要引用 JS，无需引用任何 CSS ！！！-->
-  <script type="text/javascript" src="{{ URL::asset('js/wangEditor.min.js') }}"></script>
-
-  <script type="text/javascript">
-    var E = window.wangEditor
-    var editor = new E('#editor')
-
-    editor.create()
+  <script>
+    hljs.initHighlightingOnLoad();
   </script>
 @stop
