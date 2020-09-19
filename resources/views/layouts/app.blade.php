@@ -28,6 +28,8 @@
 
   @include('layouts._footer')
 
+  <!-- 自定义 Blade 指令 -->
+  @routes
   <!-- Scripts -->
   <script src="{{ URL::asset('layui/layui.js') }}"></script>
   <script src="{{ URL::asset('js/common.js') }}"></script>

@@ -17,6 +17,10 @@ pre {
   white-space:pre; /*规定段落中的文本是否换行*/
 }
 
+.header {
+  background-image: url(../images/city1.jpg);
+}
+
 /*博客页面的容器*/
 .container-fixed:after {
   content:"";

@@ -5,8 +5,10 @@
 @section('content')
 
 <div class="wrap">
-  <img src="{{ URL::asset('images/city2.jpg') }}" class="imgStyle">
+
+  <!-- 注册模块 -->
   <div class="loginForm registerForm">
+    <!-- 注册表单 -->
     <form>
       <div class="logoHead">注册页面</div>
       <div class="usernameWrapDiv">
@@ -15,7 +17,7 @@
         </div>
         <div class="usernameDiv">
           <i class="layui-icon layui-icon-username adminIcon"></i>
-          <input id="loginUsername" class="layui-input adminInput" type="text" name="username" placeholder="输入邮箱" lay-verType="tips">
+          <input id="email" class="layui-input adminInput" type="text" name="email" placeholder="输入邮箱" value="{{ old('email') }}">
         </div>
       </div>
       <div class="usernameWrapDiv">
@@ -24,7 +26,7 @@
         </div>
         <div class="usernameDiv">
           <i class="layui-icon layui-icon-password adminIcon"></i>
-          <input id="loginPassword" class="layui-input adminInput" type="password" name="password" placeholder="输入密码">
+          <input id="password" class="layui-input adminInput" type="password" name="password" placeholder="输入密码">
         </div>
       </div>
       <div class="usernameWrapDiv">
@@ -33,7 +35,7 @@
         </div>
         <div class="usernameDiv">
           <i class="layui-icon layui-icon-password adminIcon"></i>
-          <input id="confirmPassword" class="layui-input adminInput" type="password" name="password" placeholder="输入密码">
+          <input id="password_confirmation" class="layui-input adminInput" type="password" name="password_confirmation" placeholder="输入密码">
         </div>
       </div>
       <div class="usernameWrapDiv">

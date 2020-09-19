@@ -4,7 +4,7 @@ Route::get('/', 'PagesController@root')->name('root');
 
 Route::get('signup', 'UsersController@create')->name('signup');
 
-Route::resource('users', 'UsersController', ['only' => ['show', 'update', 'edit']]);
+Route::resource('users', 'UsersController', ['only' => ['show', 'create', 'store', 'update', 'edit']]);
 
 Route::get('login', 'SessionsController@create')->name('login');
 Route::post('login', 'SessionsController@store')->name('login');

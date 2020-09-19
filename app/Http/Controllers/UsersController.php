@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\User;
+use App\Http\Requests\UserRequest;
 
 class UsersController extends Controller
 {
@@ -10,8 +11,19 @@ class UsersController extends Controller
     {
         return view('users.create');
     }
-    public function show()
+
+    public function show(User $user)
     {
-        return view('users.show');
+        return view('users.show', compact('user'));
+    }
+
+    public function store(UserRequest $request)
+    {
+        $user = User::create([
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+        ]);
+
+        return $user;
     }
 }

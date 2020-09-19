@@ -5,7 +5,6 @@
 @section('content')
 
 <div class="wrap">
-  <img src="{{ URL::asset('images/city1.jpg') }}" class="imgStyle">
   <div class="loginForm">
     <form>
       <div class="logoHead">登录页面</div>
@@ -15,7 +14,7 @@
         </div>
         <div class="usernameDiv">
           <i class="layui-icon layui-icon-username adminIcon"></i>
-          <input id="loginUsername" class="layui-input adminInput" type="text" name="username" placeholder="用户名｜邮箱｜手机号" lay-verType="tips">
+          <input id="email" class="layui-input adminInput" type="text" name="username" placeholder="用户名｜邮箱｜手机号" lay-verType="tips">
         </div>
       </div>
       <div class="usernameWrapDiv">
@@ -24,7 +23,7 @@
         </div>
         <div class="usernameDiv">
           <i class="layui-icon layui-icon-password adminIcon"></i>
-          <input id="loginPassword" class="layui-input adminInput" type="password" name="password" placeholder="输入密码">
+          <input id="password" class="layui-input adminInput" type="password" name="password" placeholder="输入密码">
         </div>
       </div>
       <div class="usernameWrapDiv">
