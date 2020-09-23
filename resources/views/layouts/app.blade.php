@@ -36,9 +36,9 @@
   <script src="{{ URL::asset('js/nprogress.js') }}"></script>
   <script>NProgress.start();</script>
   <script>
-      window.onload = function () {
-          NProgress.done();
-      };
+    window.onload = function () {
+      NProgress.done();
+    };
   </script>
 
   @yield('scripts')

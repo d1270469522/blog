@@ -17,7 +17,7 @@
         </a>
       @else
         <a href="{{ route('users.show', Auth::id()) }}" class="blog-user">
-          <img src="{{ Auth::user()->avatar }}">
+          <img src="{{ !empty(Auth::user()->avatar) ? : URL::asset('images/nologin.jpg') }}">
         </a>
       @endif
       <a class="menu" id="header-menu">

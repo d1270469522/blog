@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use App\Models\User;
 use App\Http\Requests\UserRequest;
 
@@ -24,6 +25,13 @@ class UsersController extends Controller
             'password' => bcrypt($request->password),
         ]);
 
+        Auth::login($user);
+
         return $user;
+    }
+
+    public function edit(User $user)
+    {
+        return view('users.edit', compact('user'));
     }
 }

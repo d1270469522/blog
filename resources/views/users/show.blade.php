@@ -19,9 +19,7 @@
       <h2 class="user-name">{{ !empty($user->name) ?:'未设置' }}</h2>
     </div>
     <div class="layui-col-xs4 layui-col-sm4 layui-col-md4 user-section1">
-      <div class="tags f-fr mr20">微信</div>
-      <div class="tags f-fr mr20">QQ</div>
-      <div class="tags f-fr mr20">GitHub</div>
+      <div class="tags f-fr mr20"><a href="{{ route('users.edit', 1) }}">编辑</a></div>
     </div>
   </div>
 
@@ -43,13 +41,16 @@
       性别：{{ $user->sex }}
     </div>
     <div class="layui-col-xs3 layui-col-sm3 layui-col-md3">
-      城市：{{ $user->address }}
+      手机：{{ $user->phone }}
     </div>
     <div class="layui-col-xs3 layui-col-sm3 layui-col-md3">
       公司：{{ $user->company_name }}
     </div>
     <div class="layui-col-xs3 layui-col-sm3 layui-col-md3">
       职位：{{ $user->company_position }}
+    </div>
+    <div class="layui-col-xs3 layui-col-sm3 layui-col-md3">
+      城市：{{ $user->address }}
     </div>
   </div>
 
