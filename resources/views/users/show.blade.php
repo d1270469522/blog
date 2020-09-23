@@ -71,5 +71,4 @@
   <script src="{{ URL::asset('js/jquery.js') }}"></script>
   <script src="{{ URL::asset('js/highcharts.js') }}"></script>
   <script src="{{ URL::asset('js/statistics.js') }}"></script>
-  <script src="{{ URL::asset('js/user.js') }}"></script>
 @stop
