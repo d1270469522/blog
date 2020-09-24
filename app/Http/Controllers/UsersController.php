@@ -34,4 +34,17 @@ class UsersController extends Controller
     {
         return view('users.edit', compact('user'));
     }
+
+    public function update(UserRequest $request, User $user)
+    {
+        $attributes = $request->only([
+            'nick_name', 'real_name', 'email', 'phone', 'qq',
+            'wechat', 'sex', 'avatar', 'introduction', 'company_name',
+            'company_position', 'address',
+        ]);
+
+        if ($user->update($attributes)) {
+            return $user;
+        }
+    }
 }

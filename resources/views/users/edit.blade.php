@@ -10,40 +10,70 @@
     <legend>编辑资料</legend>
   </fieldset>
 
-  <form class="layui-form" action="">
+  <form class="layui-form" method="POST" accept-charset="UTF-8" enctype="multipart/form-data">
+
+    <input type="hidden" name="user_id" value="{{ $user->id }}">
 
     <div class="layui-form-item">
       <label class="layui-form-label">昵称</label>
       <div class="layui-input-block">
-        <input type="text" name="nick_name" lay-verify="nick_name" autocomplete="off" placeholder="请输入昵称" class="layui-input">
+        <input type="text" name="nick_name" lay-verify="nick_name" autocomplete="off" placeholder="请输入昵称" class="layui-input" value="{{ $user->nick_name }}">
       </div>
     </div>
 
     <div class="layui-form-item">
       <label class="layui-form-label">邮箱</label>
       <div class="layui-input-block">
-        <input type="text" name="email" lay-verify="email" autocomplete="off" placeholder="请输入邮箱" class="layui-input">
+        <input type="text" name="email" lay-verify="email" autocomplete="off" placeholder="请输入邮箱" class="layui-input" value="{{ $user->email }}">
+      </div>
+    </div>
+
+    <div class="layui-form-item">
+      <label class="layui-form-label">照片:</label>
+      <div class="layui-input-block">
+        <div class="layui-upload">
+          <button type="button" class="layui-btn" id="imagesBtn">上传图片</button>
+          <div class="layui-upload-list">
+            <img class="layui-upload-img" id="imagesPre">
+            <p id="imagesText"></p>
+          </div>
+          <input type="hidden" name="avatar" id="avatar">
+        </div>
       </div>
     </div>
 
     <div class="layui-form-item">
       <label class="layui-form-label">姓名</label>
       <div class="layui-input-block">
-        <input type="text" name="real_name" lay-verify="real_name" autocomplete="off" placeholder="请输入姓名" class="layui-input">
+        <input type="text" name="real_name" lay-verify="real_name" autocomplete="off" placeholder="请输入姓名" class="layui-input" value="{{ $user->real_name }}">
+      </div>
+    </div>
+
+    <div class="layui-form-item">
+      <label class="layui-form-label">手机</label>
+      <div class="layui-input-block">
+        <input type="text" name="phone" lay-verify="phone" autocomplete="off" placeholder="请输入手机号" class="layui-input" value="{{ $user->phone }}">
+      </div>
+    </div>
+
+    <div class="layui-form-item">
+      <label class="layui-form-label">QQ</label>
+      <div class="layui-input-block">
+        <input type="text" name="qq" lay-verify="qq" autocomplete="off" placeholder="请输入QQ号" class="layui-input" value="{{ $user->qq }}">
       </div>
     </div>
 
     <div class="layui-form-item">
       <label class="layui-form-label">公司</label>
       <div class="layui-input-block">
-        <input type="text" name="company_name" lay-verify="company_name" autocomplete="off" placeholder="请输入公司" class="layui-input">
+        <input type="text" name="company_name" lay-verify="company_name" autocomplete="off" placeholder="请输入公司" class="layui-input" value="{{ $user->company_name }}">
       </div>
     </div>
 
     <div class="layui-form-item">
       <label class="layui-form-label">职位</label>
       <div class="layui-input-block">
-        <input type="text" name="company_position" lay-verify="company_position" autocomplete="off" placeholder="请输入职位" class="layui-input">
+        <input type="text" name="company_position" lay-verify="company_position" autocomplete="off" placeholder="请输入职位" class="layui-input" value="{{ $user->company_position }}">
       </div>
     </div>
 
@@ -98,13 +128,13 @@
     <div class="layui-form-item layui-form-text">
       <label class="layui-form-label">简介</label>
       <div class="layui-input-block">
-        <textarea name="introduction" placeholder="请输入内容" class="layui-textarea"></textarea>
+        <textarea name="introduction" placeholder="请输入内容" class="layui-textarea">{{ $user->introduction }}</textarea>
       </div>
     </div>
 
     <div class="layui-form-item">
       <div class="layui-input-block">
-        <button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1" id="userEditBtn">保存</button>
+        <button type="submit" class="layui-btn" lay-submit="" lay-filter="userEditBtn">保存</button>
         <button type="reset" class="layui-btn layui-btn-primary">重置</button>
       </div>
     </div>
@@ -120,5 +150,6 @@
 @stop
 
 @section('scripts')
+  <script src="{{ URL::asset('js/jquery.js') }}"></script>
   <script src="{{ URL::asset('js/users_edit.js') }}"></script>
 @stop
