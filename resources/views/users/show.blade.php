@@ -14,7 +14,7 @@
     </div>
     <div class="layui-col-xs4 layui-col-sm4 layui-col-md4 user-section1">
       <a href="javascript:void(0)">
-        <img src="{{ !empty($user->avatar) ? : URL::asset('images/admin.jpeg') }}" class="user-img">
+        <img src="{{ $user->avatar ?? URL::asset('images/admin.jpeg') }}" class="user-img">
       </a>
       <h2 class="user-name">{{ $user->nick_name ?? '未设置' }}</h2>
     </div>

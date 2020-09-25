@@ -11,4 +11,4 @@ Route::post('login', 'SessionsController@store')->name('login');
 Route::delete('logout', 'SessionsController@destroy')->name('logout');
 
 Route::resource('topics', 'TopicsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
-Route::post('upload_image', 'TopicsController@uploadImage')->name('topics.upload_image');
+Route::post('upload_image', 'UploadsController@uploadImage')->name('uploads.upload_image');

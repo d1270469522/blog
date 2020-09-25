@@ -29,14 +29,13 @@
     </div>
 
     <div class="layui-form-item">
-      <label class="layui-form-label">照片:</label>
+      <label class="layui-form-label">头像:</label>
       <div class="layui-input-block">
         <div class="layui-upload">
-          <button type="button" class="layui-btn" id="imagesBtn">上传图片</button>
-          <div class="layui-upload-list">
-            <img class="layui-upload-img" id="imagesPre">
-            <p id="imagesText"></p>
+          <div class="layui-upload-list imagesBtn" id="imagesBtn">
+            <img class="layui-upload-img imagesPre" id="imagesPre" src="{{ $user->avatar ?? URL::asset('images/admin.jpeg') }}">
           </div>
+          <p class="imagesTip">点击图片，编辑头像</p>
           <input type="hidden" name="avatar" id="avatar">
         </div>
       </div>
@@ -80,9 +79,8 @@
     <div class="layui-form-item">
       <label class="layui-form-label">性别</label>
       <div class="layui-input-block">
-        <input type="radio" name="sex" value="男" title="男" checked="">
-        <input type="radio" name="sex" value="女" title="女">
-        <input type="radio" name="sex" value="禁" title="禁用" disabled="">
+        <input type="radio" name="sex" value="男" title="男" @if($user->sex==1)checked=''@endif>
+        <input type="radio" name="sex" value="女" title="女" @if($user->sex==2)checked=''@endif>
       </div>
     </div>
 
@@ -113,15 +111,6 @@
           <option value="余杭区">余杭区</option>
           <option value="拱墅区">临安市</option>
         </select>
-      </div>
-    </div>
-
-    <div class="layui-form-item">
-      <label class="layui-form-label">爱好</label>
-      <div class="layui-input-block">
-        <input type="checkbox" name="like[write]" title="写作">
-        <input type="checkbox" name="like[read]" title="阅读" checked="">
-        <input type="checkbox" name="like[game]" title="游戏">
       </div>
     </div>
 

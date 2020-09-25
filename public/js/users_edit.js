@@ -60,7 +60,7 @@ layui.use(['form', 'upload'], function(){
   //普通图片上传
   var uploadInst = upload.render({
     elem: '#imagesBtn'
-    ,url: route('topics.upload_image')
+    ,url: route('uploads.upload_image')
     ,headers:  {
       'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')
     }
@@ -70,25 +70,18 @@ layui.use(['form', 'upload'], function(){
       });
     }
     ,done: function(res){
-      //如果上传失败
-      if(res.code != 200){
-        return layer.msg('上传失败');
+      if(res.code == 0){
+        // 上传成功
+        $("#avatar").attr("value",res.data.src);
+        layer.msg('上传成功，请继续');return;
+      } else {
+        // 上传失败
+        layer.msg('上传失败');return;
       }
-      //上传成功
-      var demoText = $('#imagesText');
-      demoText.html('<span style="color: #4cae4c;">上传成功</span>');
-
-      var fileupload = $("#avatar");
-      fileupload.attr("value",res.data.src);
-      console.log(fileupload.attr("value"));
     }
     ,error: function(){
-      //演示失败状态，并实现重传
-      var demoText = $('#imagesText');
-      demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
-      demoText.find('.demo-reload').on('click', function(){
-        uploadInst.upload();
-      });
+      // 演示失败状态，并实现重传
+      layer.msg('演示失败');return;
     }
   });
 
