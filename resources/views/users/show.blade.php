@@ -14,7 +14,7 @@
     </div>
     <div class="layui-col-xs4 layui-col-sm4 layui-col-md4 user-section1">
       <a href="javascript:void(0)">
-        <img src="{{ !empty($user->avatar) ? : URL::asset('images/nologin.jpg') }}" class="user-img">
+        <img src="{{ !empty($user->avatar) ? : URL::asset('images/admin.jpeg') }}" class="user-img">
       </a>
       <h2 class="user-name">{{ $user->nick_name ?? '未设置' }}</h2>
     </div>
@@ -35,7 +35,7 @@
       <div class="user-desc-info">邮箱：{{ $user->email }}</div>
     </div>
     <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
-      <div class="user-desc-info">姓名：{{ $user->name }}</div>
+      <div class="user-desc-info">姓名：{{ $user->real_name }}</div>
     </div>
     <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
       <div class="user-desc-info">性别：{{ $user->sex }}</div>
