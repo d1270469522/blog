@@ -26,8 +26,11 @@ class CreateUsersTable extends Migration
             $table->string('avatar')->nullable(); //头像
             $table->string('introduction')->nullable(); //座右铭
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('company_namae')->nullable();
+            $table->string('company_name')->nullable();
             $table->string('company_position')->nullable();
+            $table->string('province')->nullable();
+            $table->string('city')->nullable();
+            $table->string('county')->nullable();
             $table->string('address')->nullable();
             $table->rememberToken();
             $table->timestamps();

@@ -33,10 +33,10 @@
       <div class="layui-input-block">
         <div class="layui-upload">
           <div class="layui-upload-list imagesBtn" id="imagesBtn">
-            <img class="layui-upload-img imagesPre" id="imagesPre" src="{{ $user->avatar ?? URL::asset('images/admin.jpeg') }}">
+            <img class="layui-upload-img imagesPre" id="imagesPre" src="{{ $user->avatar ?? URL::asset('images/nologin.jpg') }}">
           </div>
           <p class="imagesTip">点击图片，编辑头像</p>
-          <input type="hidden" name="avatar" id="avatar">
+          <input type="hidden" name="avatar" id="avatar" value="{{ $user->avatar ?? '' }}">
         </div>
       </div>
     </div>
@@ -63,6 +63,40 @@
     </div>
 
     <div class="layui-form-item">
+      <label class="layui-form-label">性别</label>
+      <div class="layui-input-block">
+        <input type="radio" name="sex" value="男" title="男" @if($user->sex=='男')checked=''@endif>
+        <input type="radio" name="sex" value="女" title="女" @if($user->sex=='女')checked=''@endif>
+      </div>
+    </div>
+
+    <div class="layui-form-item" id="area-picker">
+      <div class="layui-form-label">地区</div>
+      <div class="layui-input-inline" style="width: 200px;">
+        <select name="province" class="province-selector" data-value="{{ $user->province ?? '北京市'}}" lay-filter="province-1">
+          <option value="">请选择省</option>
+        </select>
+      </div>
+      <div class="layui-input-inline" style="width: 200px;">
+        <select name="city" class="city-selector" data-value="{{ $user->city ?? '北京市'}}" lay-filter="city-1">
+          <option value="">请选择市</option>
+        </select>
+      </div>
+      <div class="layui-input-inline" style="width: 200px;">
+        <select name="county" class="county-selector" data-value="{{ $user->county ?? '东城区'}}" lay-filter="county-1">
+          <option value="">请选择区</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="layui-form-item">
+      <label class="layui-form-label">住址</label>
+      <div class="layui-input-block">
+        <input type="text" name="address" lay-verify="address" autocomplete="off" placeholder="请输入公司" class="layui-input" value="{{ $user->address }}">
+      </div>
+    </div>
+
+    <div class="layui-form-item">
       <label class="layui-form-label">公司</label>
       <div class="layui-input-block">
         <input type="text" name="company_name" lay-verify="company_name" autocomplete="off" placeholder="请输入公司" class="layui-input" value="{{ $user->company_name }}">
@@ -73,44 +107,6 @@
       <label class="layui-form-label">职位</label>
       <div class="layui-input-block">
         <input type="text" name="company_position" lay-verify="company_position" autocomplete="off" placeholder="请输入职位" class="layui-input" value="{{ $user->company_position }}">
-      </div>
-    </div>
-
-    <div class="layui-form-item">
-      <label class="layui-form-label">性别</label>
-      <div class="layui-input-block">
-        <input type="radio" name="sex" value="男" title="男" @if($user->sex==1)checked=''@endif>
-        <input type="radio" name="sex" value="女" title="女" @if($user->sex==2)checked=''@endif>
-      </div>
-    </div>
-
-    <div class="layui-form-item">
-      <label class="layui-form-label">住址</label>
-      <div class="layui-input-inline">
-        <select name="province">
-          <option value="">请选择省</option>
-          <option value="浙江" selected="">浙江省</option>
-          <option value="你的工号">江西省</option>
-          <option value="你最喜欢的老师">福建省</option>
-        </select>
-      </div>
-      <div class="layui-input-inline">
-        <select name="city">
-          <option value="">请选择市</option>
-          <option value="杭州">杭州</option>
-          <option value="宁波" disabled="">宁波</option>
-          <option value="温州">温州</option>
-          <option value="温州">台州</option>
-          <option value="温州">绍兴</option>
-        </select>
-      </div>
-      <div class="layui-input-inline">
-        <select name="county">
-          <option value="">请选择县/区</option>
-          <option value="西湖区">西湖区</option>
-          <option value="余杭区">余杭区</option>
-          <option value="拱墅区">临安市</option>
-        </select>
       </div>
     </div>
 
@@ -141,4 +137,5 @@
 @section('scripts')
   <script src="{{ URL::asset('js/jquery.js') }}"></script>
   <script src="{{ URL::asset('js/users_edit.js') }}"></script>
+  <script src="{{ URL::asset('js/upload.js') }}"></script>
 @stop

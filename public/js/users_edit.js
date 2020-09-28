@@ -1,7 +1,7 @@
-layui.use(['form', 'upload'], function(){
+layui.use(['layer', 'form', 'layarea'], function(){
   var form = layui.form
   ,layer   = layui.layer
-  ,upload  = layui.upload
+  ,layarea = layui.layarea
   ,$       = layui.jquery
 
   //监听提交
@@ -28,7 +28,7 @@ layui.use(['form', 'upload'], function(){
         }
       },
       error:function (res) {
-        console.log(res);return false;
+        console.log(res);
         layer.close(loginLoadIndex);
         if (res.status == 422) {
           var json=JSON.parse(res.responseText);
@@ -56,33 +56,10 @@ layui.use(['form', 'upload'], function(){
     return false; // 禁止表单跳转
   });
 
-
-  //普通图片上传
-  var uploadInst = upload.render({
-    elem: '#imagesBtn'
-    ,url: route('uploads.upload_image')
-    ,headers:  {
-      'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')
-    }
-    ,before: function(obj){
-      obj.preview(function(index, file, result){
-        $('#imagesPre').attr('src', result);
-      });
-    }
-    ,done: function(res){
-      if(res.code == 0){
-        // 上传成功
-        $("#avatar").attr("value",res.data.src);
-        layer.msg('上传成功，请继续');return;
-      } else {
-        // 上传失败
-        layer.msg('上传失败');return;
-      }
-    }
-    ,error: function(){
-      // 演示失败状态，并实现重传
-      layer.msg('演示失败');return;
-    }
+  // 地址选择
+  layarea.render({
+    elem: '#area-picker',
+    change: function (res) {}
   });
 
 });

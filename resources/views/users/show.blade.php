@@ -13,8 +13,8 @@
       <div class="tags f-fl ml20">点赞<br>99</div>
     </div>
     <div class="layui-col-xs4 layui-col-sm4 layui-col-md4 user-section1">
-      <a href="javascript:void(0)">
-        <img src="{{ $user->avatar ?? URL::asset('images/admin.jpeg') }}" class="user-img">
+      <a href="{{ $user->avatar ?? URL::asset('images/nologin.jpg') }}" target="_blank">
+        <img src="{{ $user->avatar ?? URL::asset('images/nologin.jpg') }}" class="user-img">
       </a>
       <h2 class="user-name">{{ $user->nick_name ?? '未设置' }}</h2>
     </div>
@@ -50,7 +50,10 @@
       <div class="user-desc-info">职位：{{ $user->company_position }}</div>
     </div>
     <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
-      <div class="user-desc-info">城市：{{ $user->address }}</div>
+      <div class="user-desc-info">地区：{{ $user->full_address }}</div>
+    </div>
+    <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
+      <div class="user-desc-info">住址：{{ $user->address }}</div>
     </div>
   </div>
 

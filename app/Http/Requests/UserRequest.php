@@ -30,14 +30,14 @@ class UserRequest extends Request
     {
         return [
             'nick_name' => '昵称',
+            'real_name' => '姓名',
         ];
     }
 
     public function messages()
     {
         return [
-            'name.regex'    => '用户名只支持中英文、数字、横杆和下划线。',
-            'name.between'  => '用户名必须介于 1 - 25 个字符之间。',
+            'nick_name.regex' => '姓名只支持中英文、数字、横杆和下划线。',
         ];
     }
 }

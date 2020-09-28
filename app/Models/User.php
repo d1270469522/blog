@@ -28,6 +28,9 @@ class User extends Authenticatable
         'introduction',
         'company_name',
         'company_position',
+        'province',
+        'city',
+        'county',
         'address',
     ];
 
@@ -48,4 +51,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function getFullAddressAttribute()
+    {
+        return "{$this->province}-{$this->city}-{$this->county}";
+    }
 }

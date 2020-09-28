@@ -40,7 +40,7 @@ class UsersController extends Controller
         $attributes = $request->only([
             'nick_name', 'real_name', 'email', 'phone', 'qq',
             'wechat', 'sex', 'avatar', 'introduction', 'company_name',
-            'company_position', 'address',
+            'company_position', 'province', 'city', 'county', 'address',
         ]);
 
         if ($user->update($attributes)) {
