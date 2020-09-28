@@ -124,24 +124,42 @@ function login() {
     $.ajax({
       type:'post',
       url:route('login'),
-      dataType:'json',
+      dataType:'json', // dataType 设置你收到服务器数据的格式
       headers:  {
         'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')
       },
       data:params,
-      success:function (data) {
+      success:function (res) {
         layer.close(loginLoadIndex);
-        var jsonData = JSON.parse(data);
-        if (data){
-          window.location.href = route('login');
+        if (res){
+          window.location.href = route('users.show', res.id);
         }
       },
-      error:function () {
+      error:function (res) {
         layer.close(loginLoadIndex);
-        layer.msg('登录失败！', {
-          time: 3000,
-        });
-        $('#loginBtn').val("登录");
+        $('#registerBtn').val("注册");
+        if (res.status == 422) {
+          var json=JSON.parse(res.responseText);
+          json = json.errors;
+          for ( var item in json) {
+            for ( var i = 0; i < json[item].length; i++) {
+              layer.msg(json[item][i], {
+                time: 3000,
+              });
+              return ; //遇到验证错误，就退出
+            }
+          }
+        } else if (res.status == 500) {
+          layer.msg('服务器错误！', {
+            time: 3000,
+          });
+          return ;
+        } else {
+          layer.msg('网络异常！', {
+            time: 3000,
+          });
+          return ;
+        }
       }
     });
   }

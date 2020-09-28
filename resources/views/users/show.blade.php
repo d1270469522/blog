@@ -19,7 +19,14 @@
       <h2 class="user-name">{{ $user->nick_name ?? '未设置' }}</h2>
     </div>
     <div class="layui-col-xs4 layui-col-sm4 layui-col-md4 user-section1">
-      <div class="tags f-fr mr20"><a href="{{ route('users.edit', 1) }}">编辑</a></div>
+      <a href="javascript:viod(0);" class=" f-fr mr20">
+        <form action="{{ route('logout') }}" method="POST">
+          {{ csrf_field() }}
+          {{ method_field('DELETE') }}
+          <button class="layui-btn layui-btn-sm layui-btn-danger" type="submit" name="button">退出</button>
+        </form>
+      </a>
+      <a class="f-fr mr20 layui-btn layui-btn-sm layui-btn-normal" href="{{ route('users.edit', 1) }}">编辑</a>
     </div>
   </div>
 
@@ -48,6 +55,9 @@
     </div>
     <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
       <div class="user-desc-info">职位：{{ $user->company_position }}</div>
+    </div>
+    <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
+      <div class="user-desc-info">QQ：{{ $user->qq }}</div>
     </div>
     <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
       <div class="user-desc-info">地区：{{ $user->full_address }}</div>
