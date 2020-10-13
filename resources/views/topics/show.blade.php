@@ -14,7 +14,7 @@
 
           <!-- 标题 作者 阅读量 时间 -->
           <aside>
-            <h4 class="title">你若盛开，蝴蝶自来！</h4>
+            <h4 class="title">你若盛开，蝴蝶自来！<a href="#" style="color: #ccc; font-size: 13px">编辑</a></h4>
             <p class="fc-grey fs-14">
               <small>作者 <a href="javascript:void(0)" class="fc-link">天尽头流浪</a></small>
               <small class="ml10">围观群众 <label>121</label></small>

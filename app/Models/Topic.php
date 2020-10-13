@@ -2,8 +2,6 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-
 class Topic extends Model
 {
     protected $fillable = [
@@ -16,4 +14,28 @@ class Topic extends Model
         'is_top',
         'is_hot',
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function scopeWithOrder($query, $order)
+    {
+        // 不同的排序，使用不同的数据读取逻辑
+        switch ($order) {
+            case 'recent':
+                $query->recent();
+                break;
+
+            default:
+                $query->recentReplied();
+                break;
+        }
+    }
 }

@@ -15,14 +15,18 @@ class CreateTopicsTable extends Migration
     {
         Schema::create('topics', function (Blueprint $table) {
             $table->id();
-            $table->integer('category_id')->index();
-            $table->integer('user_id')->index();
+            $table->integer('user_id')->unsigned()->index();
+            $table->integer('category_id')->unsigned()->index();
             $table->string('title');
             $table->string('image');
             $table->string('desc');
-            $table->string('content');
+            $table->text('content');
             $table->integer('is_top');
             $table->integer('is_hot');
+            $table->integer('reply_count')->unsigned()->default(0);
+            $table->integer('view_count')->unsigned()->default(0);
+            $table->integer('last_reply_user_id')->unsigned()->default(0);
+            $table->integer('order')->unsigned()->default(0);
             $table->timestamps();
         });
     }

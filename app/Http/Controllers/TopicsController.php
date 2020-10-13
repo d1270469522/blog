@@ -8,14 +8,18 @@ use App\Http\Requests\TopicRequest;
 
 class TopicsController extends Controller
 {
-    public function index()
+    public function index(Request $request, Topic $topic, User $user)
     {
-        return view('topics.index');
+        $topics = $topic->withOrder($request->order)
+                        ->with('user', 'category')  // 预加载防止 N+1 问题
+                        ->paginate(6);
+
+        return view('topics.index', compact('topics'));
     }
 
-    public function show()
+    public function show(Request $request, Topic $topic)
     {
-        return view('topics.show');
+        return view('topics.show', compact('topic'));
     }
 
     public function create()
