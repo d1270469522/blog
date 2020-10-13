@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCagegoriesTable extends Migration
+class CreateCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateCagegoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('cagegories', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name')->index()->comment('名称');
             $table->text('description')->nullable()->comment('描述');
@@ -28,6 +28,6 @@ class CreateCagegoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cagegories');
+        Schema::dropIfExists('categories');
     }
 }
