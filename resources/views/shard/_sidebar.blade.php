@@ -15,9 +15,9 @@
       <ul class="category mt20" id="category">
         <li data-index="0" class="slider"></li>
         <li data-index="1"><a href="{{ route('topics.index') }}">全部文章</a></li>
-        <li data-index="2"><a href="{{ route('topics.index') }}">分类一</a></li>
-        <li data-index="3"><a href="{{ route('topics.index') }}">分类二</a></li>
-        <li data-index="4"><a href="{{ route('topics.index') }}">分类三</a></li>
+        @foreach ($categories as $value)
+        <li data-index="{{ $value->id + 1 }}"><a href="{{ route('topics.index') }}">{{ $value->name }}</a></li>
+        @endforeach
       </ul>
     </div>
 
@@ -25,9 +25,9 @@
     <div class="category-toggle"><i class="layui-icon">&#xe603;</i></div>
     <div class="article-category">
       <div class="article-category-title">分类导航</div>
-        <a href="{{ route('topics.index') }}">分类一</a>
-        <a href="{{ route('topics.index') }}">分类二</a>
-        <a href="{{ route('topics.index') }}">分类三</a>
+        @foreach ($categories as $value)
+        <a href="{{ route('topics.index') }}">{{ $value->name }}</a>
+        @endforeach
       <div class="f-cb"></div>
     </div>
     <div class="blog-mask animated layui-hide"></div>

@@ -21,6 +21,7 @@ class CreateTopicsTable extends Migration
             $table->string('image');
             $table->string('desc');
             $table->text('content');
+            $table->text('content_html');
             $table->integer('is_top');
             $table->integer('is_hot');
             $table->integer('reply_count')->unsigned()->default(0);

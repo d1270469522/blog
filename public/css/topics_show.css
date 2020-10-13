@@ -1,9 +1,16 @@
 * {
   /*border: 1px solid #000;*/
 }
+image{
+  width: 100%;
+}
 .article-item a{
   color:#3e8bc7;
   margin:0 2px
+}
+/*标题右侧的编辑按钮*/
+.topic_edit{
+  font-size: 13px;
 }
 /*标题下面一行 上面的距离*/
 .article-item .fc-grey {

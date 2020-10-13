@@ -10,6 +10,7 @@ layui.use(['form'], function(){
     var formUrl  = route('topics.store');
 
     data.field.content = simplemde.value();
+    data.field.content_html = simplemde.markdown(simplemde.value());
 
     // 打印提交数据
     console.log('提交数据' + data.field);

@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Auth;
+use App\Models\User;
 use App\Models\Topic;
+use App\Models\Category;
+use Illuminate\Http\Request;
 use App\Http\Requests\TopicRequest;
 
 class TopicsController extends Controller
@@ -14,17 +17,22 @@ class TopicsController extends Controller
                         ->with('user', 'category')  // 预加载防止 N+1 问题
                         ->paginate(6);
 
-        return view('topics.index', compact('topics'));
+        $categories = Category::all();
+        return view('topics.index', compact('topics', 'categories'));
     }
 
     public function show(Request $request, Topic $topic)
     {
-        return view('topics.show', compact('topic'));
+        $categories = Category::all();
+        $author = User::find($topic->user_id);
+
+        return view('topics.show', compact('topic', 'categories', 'author'));
     }
 
-    public function create()
+    public function create(Topic $topic)
     {
-        return view('topics.create');
+        $categories = Category::all();
+        return view('topics.create_and_edit', compact('topic', 'categories'));
     }
 
     public function store(TopicRequest $request)
@@ -36,6 +44,7 @@ class TopicsController extends Controller
             'image'       => $request->image,
             'desc'        => $request->desc,
             'content'     => $request->content,
+            'content_html'     => $request->content_html,
             'is_top'      => $request->is_top == 'on' ? 1 : 0,
             'is_hot'      => $request->is_hot == 'on' ? 1 : 0,
         ]);
@@ -45,15 +54,15 @@ class TopicsController extends Controller
 
     public function edit(Topic $topic)
     {
-        return view('users.edit', compact('user'));
+        $categories = Category::all();
+        return view('topics.create_and_edit', compact('topic', 'categories'));
     }
 
-    public function update(UserRequest $request, Topic $topic)
+    public function update(TopicRequest $request, Topic $topic)
     {
         $attributes = $request->only([
-            'nick_name', 'real_name', 'email', 'phone', 'qq',
-            'wechat', 'sex', 'avatar', 'introduction', 'company_name',
-            'company_position', 'province', 'city', 'county', 'address',
+            'title', 'category_id', 'image', 'desc', 'content',
+            'content_html', 'is_top', 'is_hot',
         ]);
 
         if ($topic->update($attributes)) {

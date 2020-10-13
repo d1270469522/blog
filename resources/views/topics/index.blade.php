@@ -8,7 +8,7 @@
   <div class="col-content">
     <div class="inner">
       <article class="article-list bloglist" id="LAY_bloglist" >
-        @include('topics._topic_list')
+        @include('topics._topic_list', $topics)
       </article>
     </div>
   </div>
