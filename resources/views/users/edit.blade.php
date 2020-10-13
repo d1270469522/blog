@@ -36,7 +36,7 @@
             <img class="layui-upload-img imagesPre" id="imagesPre" src="{{ $user->avatar ?? URL::asset('images/nologin.jpg') }}">
           </div>
           <p class="imagesTip">点击图片，编辑头像</p>
-          <input type="hidden" name="avatar" id="avatar" value="{{ $user->avatar ?? '' }}">
+          <input type="hidden" name="avatar" id="imagesInput" value="{{ $user->avatar ?? '' }}">
         </div>
       </div>
     </div>

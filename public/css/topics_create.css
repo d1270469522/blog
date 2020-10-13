@@ -12,6 +12,17 @@
   margin: 0 auto;
   padding: 45px;
 }
+.imagesBtn {
+  width: 500px;
+  height: 300px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.imagesPre{
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
 
 @media (max-width: 767px) {
   .markdown-body {

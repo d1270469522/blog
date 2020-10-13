@@ -16,7 +16,7 @@ layui.use(['upload'], function(){
     ,done: function(res){
       if(res.code == 0){
         // 上传成功
-        $("#avatar").attr("value",res.data.src);
+        $("#imagesInput").attr("value",res.data.src);
         layer.msg('上传成功，请继续');return;
       } else {
         // 上传失败

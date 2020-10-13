@@ -12,15 +12,79 @@ layui.use(['form'], function(){
     }
   });
 
-  $(".CodeMirror").keyup(function () {
-    var simplemde_mar = simplemde.value();
-    var simplemde_str = simplemde.markdown(simplemde_mar);
-    console.log(simplemde_mar);
-    console.log(simplemde_str);
-    $("#preview").html(simplemde_str);
-  })
+  //监听提交
+  form.on('submit(userEditBtn)', function(data){
+
+    var formType = 'POST';
+    var formUrl  = route('topics.store');
+
+    // 打印提交数据
+    console.log('提交数据' + data.field);
+    // 遮罩层
+    var loginLoadIndex = layer.load(2);
+
+    if (data.field.topic_id != 0) {
+      formType = 'PATCH';
+      formUrl  = route('topics.update', data.field.topic_id);
+    }
+
+    $.ajax({
+      type:formType,
+      url:formUrl,
+      dataType:'json', // dataType 设置你收到服务器数据的格式
+      headers:  {
+        'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')
+      },
+      data:data.field,
+      success:function (res) {
+        console.log('返回数据' + res);
+        layer.close(loginLoadIndex);
+        if (res){
+          window.location.href = route('users.show', res.id);
+        }
+      },
+      error:function (res) {
+        console.log(res);
+        layer.close(loginLoadIndex);
+        if (res.status == 422) {
+          var json=JSON.parse(res.responseText);
+          json = json.errors;
+          for ( var item in json) {
+            for ( var i = 0; i < json[item].length; i++) {
+              layer.msg(json[item][i], {
+                time: 3000,
+              });
+              return ; //遇到验证错误，就退出
+            }
+          }
+        } else if (res.status == 500) {
+          layer.msg('服务器错误！', {
+            time: 3000,
+          });
+        } else {
+          layer.msg('网络异常！', {
+            time: 3000,
+          });
+        }
+      }
+    });
+
+    return false; // 禁止表单跳转
+  });
+
 });
 
+// 在下方实时显示效果
+$(".CodeMirror").keyup(function () {
+  var simplemde_mar = simplemde.value();
+  var simplemde_str = simplemde.markdown(simplemde_mar);
+  console.log(simplemde_mar);
+  console.log(simplemde_str);
+  $("#preview").html(simplemde_str);
+})
+
+
+// Markdown 格式编辑
 var simplemde = new SimpleMDE({
   // 要使用的 textarea 的 DOM 元素。默认为页面上的第一个文本区域。
   element: document.getElementById("editor"),
