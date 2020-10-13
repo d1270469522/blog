@@ -12,19 +12,26 @@
 
   <form class="layui-form" action="">
 
-    <input type="hidden" name="topic_id" value="{{ $topic->id }}">
+    <input type="hidden" name="topic_id" value="{{ isset($topic) ? $topic->id : 0 }}">
 
     <div class="layui-form-item">
       <label class="layui-form-label">标题</label>
       <div class="layui-input-block">
-        <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+        <input type="text" name="title" lay-verify="required" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
       </div>
     </div>
 
     <div class="layui-form-item">
       <label class="layui-form-label">置顶</label>
       <div class="layui-input-block">
-        <input type="checkbox" name="isTop" lay-skin="switch" lay-text="ON|OFF">
+        <input type="checkbox" name="is_top" lay-skin="switch" lay-text="ON|OFF">
+      </div>
+    </div>
+
+    <div class="layui-form-item">
+      <label class="layui-form-label">热门</label>
+      <div class="layui-input-block">
+        <input type="checkbox" name="is_hot" lay-skin="switch" lay-text="ON|OFF">
       </div>
     </div>
 
@@ -32,7 +39,7 @@
       <div class="layui-inline">
         <label class="layui-form-label">分类</label>
         <div class="layui-input-inline">
-          <select name="categories" lay-verify="required" lay-search="">
+          <select name="category_id" lay-verify="required" lay-search="">
             <option value="">直接选择或搜索选择</option>
             <option value="1">PHP</option>
             <option value="1">Mysql</option>
@@ -64,7 +71,7 @@
             <img class="layui-upload-img imagesPre" id="imagesPre" src="{{ $topic->image ?? URL::asset('images/demo1.jpg') }}">
           </div>
           <p class="imagesTip">点击图片，进行编辑</p>
-          <input type="hidden" name="topic_image" id="imagesInput" value="{{ $topic->image ?? '' }}">
+          <input type="hidden" name="image" id="imagesInput" value="{{ $topic->image ?? URL::asset('images/demo1.jpg') }}">
         </div>
       </div>
     </div>
@@ -72,14 +79,14 @@
     <div class="layui-form-item layui-form-text">
       <label class="layui-form-label">简介</label>
       <div class="layui-input-block">
-        <textarea placeholder="请输入内容" class="layui-textarea"></textarea>
+        <textarea placeholder="请输入内容" name="desc" lay-verify="required" class="layui-textarea"></textarea>
       </div>
     </div>
 
     <div class="layui-form-item layui-form-text">
       <label class="layui-form-label">正文</label>
       <div class="layui-input-block">
-        <textarea id="editor"></textarea>
+        <textarea id="editor" name="content"></textarea>
       </div>
     </div>
 
@@ -91,31 +98,6 @@
     </div>
   </form>
 
-  <br>
-  <hr>
-  <br>
-
-  <article class="markdown-body" id="preview">
-    <h2>你好啊</h2>
-    <pre>
-      <code>
-CREATE TABLE "topic" (
-    "id" serial NOT NULL PRIMARY KEY,
-    "forum_id" integer NOT NULL,
-    "subject" varchar(255) NOT NULL
-);
-ALTER TABLE "topic"
-ADD CONSTRAINT forum_id FOREIGN KEY ("forum_id")
-REFERENCES "forum" ("id");
-
--- Initials
-insert into "topic" ("forum_id", "subject")
-values (2, 'D''artagnian');</code>
-    </pre>
-    <blockquote>
-    <p>你好<br>你好</p>
-    </blockquote>
-  </article>
 </div>
 
 @endsection

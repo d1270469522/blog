@@ -25,17 +25,15 @@ class TopicsController extends Controller
 
     public function store(TopicRequest $request)
     {
-        $data = $request->all();
-        return  $data;
         $topic = Topic::create([
             'title'       => $request->title,
             'category_id' => $request->category_id,
-            'user_id'     => $request->user_id,
+            'user_id'     => 1,
             'image'       => $request->image,
             'desc'        => $request->desc,
             'content'     => $request->content,
-            'is_top'      => $request->is_top,
-            'is_hot'      => $request->is_hot,
+            'is_top'      => $request->is_top == 'on' ? 1 : 0,
+            'is_hot'      => $request->is_hot == 'on' ? 1 : 0,
         ]);
 
         return $topic;

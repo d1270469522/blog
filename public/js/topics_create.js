@@ -3,23 +3,17 @@ layui.use(['form'], function(){
   ,layer   = layui.layer
   ,$   = layui.jquery
 
-  //自定义验证规则
-  form.verify({
-    title: function(value){
-      if(value.length < 5){
-        return '标题至少得5个字符啊';
-      }
-    }
-  });
-
   //监听提交
   form.on('submit(userEditBtn)', function(data){
 
     var formType = 'POST';
     var formUrl  = route('topics.store');
 
+    data.field.content = simplemde.value();
+
     // 打印提交数据
     console.log('提交数据' + data.field);
+
     // 遮罩层
     var loginLoadIndex = layer.load(2);
 
@@ -40,7 +34,7 @@ layui.use(['form'], function(){
         console.log('返回数据' + res);
         layer.close(loginLoadIndex);
         if (res){
-          window.location.href = route('users.show', res.id);
+          window.location.href = route('topics.show', res.id);
         }
       },
       error:function (res) {
@@ -75,7 +69,7 @@ layui.use(['form'], function(){
 });
 
 // 在下方实时显示效果
-$(".CodeMirror").keyup(function () {
+$(".CodeMirror-sizer").keyup(function () {
   var simplemde_mar = simplemde.value();
   var simplemde_str = simplemde.markdown(simplemde_mar);
   console.log(simplemde_mar);
