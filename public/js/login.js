@@ -69,7 +69,7 @@ function register() {
       success:function (res) {
         layer.close(loginLoadIndex);
         if (res){
-          window.location.href = route('users.show', res.id);
+          window.location.href = route('users.edit', res.id);
         }
       },
       error:function (res) {
