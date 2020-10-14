@@ -8,6 +8,17 @@ use App\Http\Requests\UserRequest;
 
 class UsersController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', [
+            'except' => ['show', 'create', 'store']
+        ]);
+
+        $this->middleware('guest', [
+            'only' => ['create']
+        ]);
+    }
+
     public function create()
     {
         return view('users.create');
@@ -32,11 +43,13 @@ class UsersController extends Controller
 
     public function edit(User $user)
     {
+        $this->authorize('update', $user);
         return view('users.edit', compact('user'));
     }
 
     public function update(UserRequest $request, User $user)
     {
+        $this->authorize('update', $user);
         $attributes = $request->only([
             'nick_name', 'real_name', 'email', 'phone', 'qq',
             'wechat', 'sex', 'avatar', 'introduction', 'company_name',

@@ -31,7 +31,7 @@
           <label>验证码:</label>
         </div>
         <div class="usernameDiv">
-          <input id="loginCard" class="layui-input cardInput" type="text" name="card" placeholder="输入验证码">
+          <input id="loginCard" class="layui-input cardInput" type="text" name="card" placeholder="输入验证码" autocomplete="off">
           <input id="loginCode" class="layui-input codeInput"  type="button">
         </div>
       </div>

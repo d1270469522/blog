@@ -18,21 +18,23 @@
       </a>
       <h2 class="user-name">{{ $user->nick_name ?? '未设置' }}</h2>
     </div>
-    <div class="layui-col-xs4 layui-col-sm4 layui-col-md4 user-section1">
-      <a href="javascript:viod(0);" class=" f-fr mr20">
-        <form action="{{ route('logout') }}" method="POST">
-          {{ csrf_field() }}
-          {{ method_field('DELETE') }}
-          <button class="layui-btn layui-btn-sm layui-btn-danger" type="submit" name="button">退出</button>
-        </form>
-      </a>
-      <a class="f-fr mr20 layui-btn layui-btn-sm layui-btn-normal" href="{{ route('users.edit', 1) }}">编辑</a>
-    </div>
+    @if(Auth::check())
+      <div class="layui-col-xs4 layui-col-sm4 layui-col-md4 user-section1">
+        <a href="javascript:viod(0);" class=" f-fr mr20">
+          <form action="{{ route('logout') }}" method="POST">
+            {{ csrf_field() }}
+            {{ method_field('DELETE') }}
+            <button class="layui-btn layui-btn-sm layui-btn-danger" type="submit" name="button">退出</button>
+          </form>
+        </a>
+        <a class="f-fr mr20 layui-btn layui-btn-sm layui-btn-normal" href="{{ route('users.edit', Auth::id()) }}">编辑</a>
+      </div>
+    @endif
   </div>
 
   <div class="layui-row">
     <div class="layui-col-xs12 layui-col-sm12 layui-col-md12 user-introduction">
-      <p>注册于：1年前 ，最后活跃于：17秒前</p>
+      <p>注册于：{{ $user->created_at->diffForHumans() }} ，最后活跃于：{{ $user->created_at->diffForHumans() }}</p>
       <p>{{ $user->introduction ?? '这个人很懒，什么也没有留下！' }}</p>
     </div>
   </div>
