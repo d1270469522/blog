@@ -13,20 +13,21 @@ class TopicsController extends Controller
 {
     public function index(Request $request, Topic $topic, User $user)
     {
-        $topics = $topic->withOrder($request->order)
-                        ->with('user', 'category')  // 预加载防止 N+1 问题
-                        ->paginate(6);
-
+        $topics = $topic->withOrder($request->order)->with('category')->paginate(6);
+        $hot_topics = $topic->hotTopics();
         $categories = Category::all();
-        return view('topics.index', compact('topics', 'categories'));
+// echo '<pre>';
+// print_r($topics);die;
+        return view('topics.index', compact('topics', 'categories', 'hot_topics'));
     }
 
     public function show(Request $request, Topic $topic)
     {
+        $hot_topics = $topic->hotTopics();
         $categories = Category::all();
         $author = User::find($topic->user_id);
 
-        return view('topics.show', compact('topic', 'categories', 'author'));
+        return view('topics.show', compact('topic', 'hot_topics', 'categories', 'author'));
     }
 
     public function create(Topic $topic)

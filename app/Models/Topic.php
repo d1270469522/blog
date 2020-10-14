@@ -46,4 +46,14 @@ class Topic extends Model
         // 此时会自动触发框架对数据模型 updated_at 时间戳的更新
         return $query->orderBy('updated_at', 'desc');
     }
+
+    public function hotTopics()
+    {
+        return $this->where(['is_hot' => 1])->get(['id', 'title']);
+    }
+
+    public function topTopics()
+    {
+        return $this->where(['is_top' => 1])->get();
+    }
 }

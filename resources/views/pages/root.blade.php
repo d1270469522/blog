@@ -50,56 +50,27 @@
         <div class="warp-box">
           <div class="new-article">
             <div class="inner wow fadeInDown" data-wow-delay=".2s">
-              <h1>博客分类</h1>
+              <h1>推荐阅读</h1>
               <p>只要朝着一个方向努力，一切都会变得得心应手！</p>
             </div>
           </div>
           <div class="layui-row">
-            <!-- 分类：第一个 -->
+            @foreach($top_topics as $top_topic)
             <div class="layui-col-xs12 layui-col-sm4 layui-col-md4  wow fadeInUp">
               <div class="single-news">
                 <div class="news-head">
-                  <img src="{{ URL::asset('images/wu.jpg') }}">
-                  <a href="{{ route('root') }}" class="link"><i class="fa fa-link"></i></a>
+                  <img src="{{ $top_topic->image }}">
+                  <a href="{{ route('topics.show', $top_topic->id) }}" class="link"><i class="fa fa-link"></i></a>
                 </div>
                 <div class="news-content">
-                  <h4><a href="{{ route('root') }}">Java专栏</a></h4>
-                  <div class="date">2020年6月16日</div>
-                  <p>本专栏主要分享Java的各种常见问题，包括java学习路线，java基础，框架，微服务，项目，面试题。本专栏主要分享Java的各种常见问题，包括java学习路线，java基础，框架，微服务，项目，面试题。本专栏主要分享Java的各种常见问题，包括java学习路线，java基础，框架，微服务，项目，面试题。本专栏主要分享Java的各种常见问题，包括java学习路线，java基础，框架，微服务，项目，面试题。本专栏主要分享Java的各种常见问题，包括java学习路线，java基础，框架，微服务，项目，面试题。本专栏主要分享Java的各种常见问题，包括java学习路线，java基础，框架，微服务，项目，面试题。本专栏主要分享Java的各种常见问题，包括java学习路线，java基础，框架，微服务，项目，面试题。本专栏主要分享Java的各种常见问题，包括java学习路线，java基础，框架，微服务，项目，面试题。</p>
-                  <a href="{{ route('root') }}" class="btn">阅读更多</a>
+                  <h4><a href="{{ route('topics.show', $top_topic->id) }}">{{ $top_topic->title }}</a></h4>
+                  <div class="date">{{ $top_topic->created_at }}</div>
+                  <p>{{ $top_topic->desc }}</p>
+                  <a href="{{ route('topics.show', $top_topic->id) }}" class="btn">阅读更多</a>
                 </div>
               </div>
             </div>
-            <!-- 分类：第二个 -->
-            <div class="layui-col-xs12 layui-col-sm4 layui-col-md4  wow fadeInUp" data-wow-delay=".3s">
-              <div class="single-news">
-                <div class="news-head">
-                  <img src="{{ URL::asset('images/city2.jpg') }}">
-                  <a href="{{ route('root') }}" class="link"><i class="fa fa-link"></i></a>
-                </div>
-                <div class="news-content">
-                  <h4><a href="{{ route('root') }}">Java专栏</a></h4>
-                  <div class="date">2020年6月16日</div>
-                  <p>本专栏主要分享Java的各种常见问题，包括java学习路线，java基础，框架，微服务，项目，面试题。</p>
-                  <a href="{{ route('root') }}" class="btn">阅读更多</a>
-                </div>
-              </div>
-            </div>
-            <!-- 分类：第三个 -->
-            <div class="layui-col-xs12 layui-col-sm4 layui-col-md4  wow fadeInUp" data-wow-delay=".6s">
-              <div class="single-news">
-                <div class="news-head">
-                  <img src="{{ URL::asset('images/city1.jpg') }}">
-                  <a href="{{ route('root') }}" class="link"><i class="fa fa-link"></i></a>
-                </div>
-                <div class="news-content">
-                  <h4><a href="{{ route('root') }}">Java专栏</a></h4>
-                  <div class="date">2020年6月16日</div>
-                  <p>本专栏主要分享Java的各种常见问题，包括java学习路线，java基础，框架，微服务，项目，面试题。</p>
-                  <a href="{{ route('root') }}" class="btn">阅读更多</a>
-                </div>
-              </div>
-            </div>
+            @endforeach
           </div>
         </div>
       </div>
@@ -115,7 +86,7 @@
             <div class="inner">
               <div class="links">
                 <ul>
-                  <li class="wow fadeInLeft"><a href="{{ route('root') }}">关于作者</a></li>
+                  <li class="wow fadeInLeft"><a href="{{ route('users.show', 1) }}">关于作者</a></li>
                   <li class="wow fadeInRight"><a href="{{ route('root') }}">友情链接</a></li>
                 </ul>
               </div>
@@ -153,7 +124,7 @@
             <div class="single-widget about">
               <h2>天尽头流浪</h2>
               <p>世界那么大，我想去看看</p>
-              <a href="{{ route('root') }}" class="btn">About Me</a>
+              <a href="{{ route('users.show', 1) }}" class="btn">About Me</a>
             </div>
           </div>
           <!-- 其它链接 -->
@@ -161,12 +132,12 @@
             <div class="single-widget">
               <h2>相关链接</h2>
               <ul class="social-icon">
-                <li class="active"><a href="{{ route('root') }}"><i class="fa fa-book"></i>分类</a></li>
-                <li class="active"><a href="{{ route('root') }}"><i class="fa fa-comments"></i>博文</a></li>
-                <li class="active"><a href="{{ route('root') }}"><i class="fa fa-share"></i>留言</a></li>
-                <li class="active"><a href="{{ route('root') }}"><i class="fa fa-snowflake-o"></i>活跃</a></li>
-                <li class="active"><a href="{{ route('root') }}"><i class="fa fa-files-o"></i>热门</a></li>
-                <li class="active"><a href="{{ route('root') }}"><i class="fa fa-files-o"></i>置顶</a></li>
+                <li class="active"><a href="{{ route('topics.index') }}"><i class="fa fa-book"></i>分类</a></li>
+                <li class="active"><a href="{{ route('topics.index') }}"><i class="fa fa-comments"></i>博文</a></li>
+                <li class="active"><a href="{{ route('topics.index') }}"><i class="fa fa-share"></i>留言</a></li>
+                <li class="active"><a href="{{ route('topics.index') }}"><i class="fa fa-snowflake-o"></i>活跃</a></li>
+                <li class="active"><a href="{{ route('topics.index') }}"><i class="fa fa-files-o"></i>热门</a></li>
+                <li class="active"><a href="{{ route('topics.index') }}"><i class="fa fa-files-o"></i>置顶</a></li>
               </ul>
             </div>
           </div>

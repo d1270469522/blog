@@ -24,7 +24,7 @@
   <aside class="f-oh footer">
     <div class="f-fl tags">
       <span class="fa fa-tags fs-16"></span>
-      <a href="javascript:void(0)" class="tag">心语</a>
+      <a href="{{ route('categories.show', $topic->category->id) }}" class="tag">{{ $topic->category->name }}</a>
     </div>
     <div class="f-fr">
       <span class="read">

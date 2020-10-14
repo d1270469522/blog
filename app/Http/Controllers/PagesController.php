@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Topic;
 
 class PagesController extends Controller
 {
-    public function root()
+    public function root(Topic $topic)
     {
-        return view('pages.root');
+        $top_topics = $topic->topTopics();
+
+        return view('pages.root', compact('top_topics'));
     }
 }

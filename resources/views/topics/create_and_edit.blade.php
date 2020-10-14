@@ -37,15 +37,6 @@
     </div>
 
     <div class="layui-form-item">
-      <label class="layui-form-label">标签</label>
-      <div class="layui-input-block">
-        <input type="checkbox" name="tags[1]" title="前端">
-        <input type="checkbox" name="tags[2]" title="后端">
-        <input type="checkbox" name="tags[3]" title="服务器">
-      </div>
-    </div>
-
-    <div class="layui-form-item">
       <label class="layui-form-label">配图</label>
       <div class="layui-input-block">
         <div class="layui-upload">
