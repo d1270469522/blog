@@ -22,20 +22,6 @@
     </div>
 
     <div class="layui-form-item">
-      <label class="layui-form-label">置顶</label>
-      <div class="layui-input-block">
-        <input type="checkbox" name="is_top" lay-skin="switch" lay-text="ON|OFF">
-      </div>
-    </div>
-
-    <div class="layui-form-item">
-      <label class="layui-form-label">热门</label>
-      <div class="layui-input-block">
-        <input type="checkbox" name="is_hot" lay-skin="switch" lay-text="ON|OFF">
-      </div>
-    </div>
-
-    <div class="layui-form-item">
       <div class="layui-inline">
         <label class="layui-form-label">分类</label>
         <div class="layui-input-inline">
