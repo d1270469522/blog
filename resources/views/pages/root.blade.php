@@ -89,7 +89,7 @@
               <div class="links">
                 <ul>
                   <li class="wow fadeInLeft"><a href="{{ route('users.show', 1) }}">关于作者</a></li>
-                  <li class="wow fadeInRight"><a href="{{ route('root') }}">友情链接</a></li>
+                  <li class="wow fadeInRight"><a href="javascript:void(0)">友情链接</a></li>
                 </ul>
               </div>
             </div>
