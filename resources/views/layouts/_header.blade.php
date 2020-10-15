@@ -7,8 +7,9 @@
         <ul>
           <li><a href="{{ route('root') }}">首页</a></li>
           <li><a href="{{ route('topics.index') }}">博客</a></li>
-          <li><a href="{{ route('users.show', 1) }}">关于</a></li>
-          <li><a href="{{ route('topics.create') }}">发布</a></li>
+          @if(Auth::check() && Auth::id() == 1)
+            <li><a href="{{ route('topics.create') }}">发布</a></li>
+          @endif
         </ul>
       </nav>
       @guest
