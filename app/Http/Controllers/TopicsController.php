@@ -39,15 +39,15 @@ class TopicsController extends Controller
     public function store(TopicRequest $request)
     {
         $topic = Topic::create([
-            'title'       => $request->title,
-            'category_id' => $request->category_id,
-            'user_id'     => 1,
-            'image'       => $request->image,
-            'desc'        => $request->desc,
-            'content'     => $request->content,
-            'content_html'     => $request->content_html,
-            'is_top'      => $request->is_top == 'on' ? 1 : 0,
-            'is_hot'      => $request->is_hot == 'on' ? 1 : 0,
+            'title'        => $request->title,
+            'category_id'  => $request->category_id,
+            'user_id'      => 1,
+            'image'        => $request->image,
+            'desc'         => $request->desc,
+            'content'      => $request->content,
+            'content_html' => $request->content_html,
+            'is_top'       => $request->is_top == 'on' ? 1 : 0,
+            'is_hot'       => $request->is_hot == 'on' ? 1 : 0,
         ]);
 
         return $topic;
@@ -65,6 +65,9 @@ class TopicsController extends Controller
             'title', 'category_id', 'image', 'desc', 'content',
             'content_html', 'is_top', 'is_hot',
         ]);
+
+        $attributes['is_top'] = isset($attributes['is_top']) ? 1 : 0;
+        $attributes['is_hot'] = isset($attributes['is_hot']) ? 1 : 0;
 
         if ($topic->update($attributes)) {
             return $topic;
