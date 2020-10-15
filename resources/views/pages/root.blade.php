@@ -23,7 +23,9 @@
     <ul class="point">
       <li><a href="{{ route('root') }}">首页</a></li>
       <li><a href="{{ route('topics.index') }}">博客</a></li>
-      <li><a href="{{ route('topics.index') }}">留言</a></li>
+      @guest
+        <li><a href="{{ route('login') }}">登录</a></li>
+      @endif
     </ul>
     <!-- 右下角：签名 -->
     <div class="logo"><a>天尽头流浪</a></div>
