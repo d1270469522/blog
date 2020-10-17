@@ -40,7 +40,7 @@
 
           <div class="copyright mt20">
             <p class="f-toe">本文标题：<a href="javascript:void(0)">{{ $topic->title }}</a></p>
-            <p class="f-toe">本文网址：<a href="javascript:void(0)">http://www.lzqcode.com</a></p>
+            <p class="f-toe">本文网址：<a href="javascript:void(0)">http://www.blog.tianjintou.top</a></p>
             <p class="f-toe fc-black">非特殊说明，本文版权归 {{ $author->nick_name ?? '外星人' }} 所有，转载请注明出处.</p>
           </div>
 
