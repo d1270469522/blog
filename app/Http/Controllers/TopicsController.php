@@ -13,11 +13,10 @@ class TopicsController extends Controller
 {
     public function index(Request $request, Topic $topic, User $user)
     {
-        $topics = $topic->withOrder($request->order)->with('category')->paginate(6);
+        $topics = $topic->withOrder($request->order)->with('category')->all();
         $hot_topics = $topic->hotTopics();
         $categories = Category::all();
-// echo '<pre>';
-// print_r($topics);die;
+
         return view('topics.index', compact('topics', 'categories', 'hot_topics'));
     }
 
