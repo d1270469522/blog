@@ -13,7 +13,7 @@ class TopicsController extends Controller
 {
     public function index(Request $request, Topic $topic, User $user)
     {
-        $topics = $topic->withOrder($request->order)->with('category')->all();
+        $topics = $topic->withOrder($request->order)->with('category')->get();
         $hot_topics = $topic->hotTopics();
         $categories = Category::all();
 
